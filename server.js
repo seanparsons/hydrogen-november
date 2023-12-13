@@ -39,10 +39,17 @@ export const getLoadContext = (env, executionContext) => async (request) => {
    * Create a cart handler that will be used to
    * create and update the cart in the session.
    */
+
+  const IS_TEST_ENVIRONMENT = typeof window !== 'undefined';
+
   const cart = createCartHandler({
     storefront,
-    getCartId: cartGetIdDefault(request.headers),
-    setCartId: cartSetIdDefault(),
+    getCartId: IS_TEST_ENVIRONMENT
+      ? () =>
+          // Demo cart ID obtained from https://mock.shop/create-cart
+          'gid://shopify/Cart/Z2NwLXVzLWNlbnRyYWwxOjAxSEhKQ0I3RFoySlY3Mk5ORlhUVEo2RjhU'
+      : cartGetIdDefault(request.headers),
+    setCartId: IS_TEST_ENVIRONMENT ? () => {} : cartSetIdDefault(),
     cartQueryFragment: CART_QUERY_FRAGMENT,
   });
 
