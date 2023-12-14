@@ -11,6 +11,8 @@ const contextGetter = getLoadContext(
   {
     waitUntil: () => {},
   },
+  // Demo cart ID obtained from https://mock.shop/create-cart
+  'gid://shopify/Cart/Z2NwLXVzLWNlbnRyYWwxOjAxSEhKQ0I3RFoySlY3Mk5ORlhUVEo2RjhU',
 );
 
 export var storyboard = (

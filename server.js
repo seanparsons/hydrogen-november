@@ -14,47 +14,47 @@ import {
 } from '@shopify/remix-oxygen';
 
 /** The getLoadContext is used both here in server.js, and by Utopia's storyboard.js */
-export const getLoadContext = (env, executionContext) => async (request) => {
-  const waitUntil = executionContext.waitUntil.bind(executionContext);
-  const [cache, session] = await Promise.all([
-    caches.open('hydrogen'),
-    HydrogenSession.init(request, [env.SESSION_SECRET]),
-  ]);
+export const getLoadContext =
+  (env, executionContext, mockCartID) => async (request) => {
+    const waitUntil = executionContext.waitUntil.bind(executionContext);
+    const [cache, session] = await Promise.all([
+      caches.open('hydrogen'),
+      HydrogenSession.init(request, [env.SESSION_SECRET]),
+    ]);
 
-  /**
-   * Create Hydrogen's Storefront client.
-   */
-  const {storefront} = createStorefrontClient({
-    cache,
-    waitUntil,
-    i18n: getLocaleFromRequest(request),
-    publicStorefrontToken: env.PUBLIC_STOREFRONT_API_TOKEN,
-    privateStorefrontToken: env.PRIVATE_STOREFRONT_API_TOKEN,
-    storeDomain: env.PUBLIC_STORE_DOMAIN,
-    storefrontId: env.PUBLIC_STOREFRONT_ID,
-    storefrontHeaders: getStorefrontHeaders(request),
-  });
+    /**
+     * Create Hydrogen's Storefront client.
+     */
+    const {storefront} = createStorefrontClient({
+      cache,
+      waitUntil,
+      i18n: getLocaleFromRequest(request),
+      publicStorefrontToken: env.PUBLIC_STOREFRONT_API_TOKEN,
+      privateStorefrontToken: env.PRIVATE_STOREFRONT_API_TOKEN,
+      storeDomain: env.PUBLIC_STORE_DOMAIN,
+      storefrontId: env.PUBLIC_STOREFRONT_ID,
+      storefrontHeaders: getStorefrontHeaders(request),
+    });
 
-  /*
-   * Create a cart handler that will be used to
-   * create and update the cart in the session.
-   */
+    /*
+     * Create a cart handler that will be used to
+     * create and update the cart in the session.
+     */
 
-  const IS_TEST_ENVIRONMENT = typeof window !== 'undefined';
+    const IS_TEST_ENVIRONMENT = typeof window !== 'undefined';
 
-  const cart = createCartHandler({
-    storefront,
-    getCartId: IS_TEST_ENVIRONMENT
-      ? () =>
-          // Demo cart ID obtained from https://mock.shop/create-cart
-          'gid://shopify/Cart/Z2NwLXVzLWNlbnRyYWwxOjAxSEhKQ0I3RFoySlY3Mk5ORlhUVEo2RjhU'
-      : cartGetIdDefault(request.headers),
-    setCartId: IS_TEST_ENVIRONMENT ? () => {} : cartSetIdDefault(),
-    cartQueryFragment: CART_QUERY_FRAGMENT,
-  });
+    const cart = createCartHandler({
+      storefront,
+      getCartId:
+        mockCartID != null
+          ? () => mockCartID
+          : cartGetIdDefault(request.headers),
+      setCartId: IS_TEST_ENVIRONMENT ? () => {} : cartSetIdDefault(),
+      cartQueryFragment: CART_QUERY_FRAGMENT,
+    });
 
-  return {session, storefront, cart, env, waitUntil};
-};
+    return {session, storefront, cart, env, waitUntil};
+  };
 
 /**
  * Export a fetch handler in module format.
