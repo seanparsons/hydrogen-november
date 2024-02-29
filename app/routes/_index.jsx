@@ -76,7 +76,7 @@ function FeaturedCollection({ collection }) {
 function RecommendedProducts({ products }) {
   return (
     <div className='recommended-products'>
-      <h2 style={{ fontWeight: 'bold' }}>
+      <h2 style={{ fontWeight: 'bold', fontSize: '24px' }}>
         Featured Products
       </h2>
       <Suspense fallback={<div>Loading...</div>}>
