@@ -27,7 +27,11 @@ export async function loader({ context }) {
     RECOMMENDED_PRODUCTS_QUERY,
   )
 
-  return defer({ featuredCollection, recommendedProducts })
+  return defer({
+    featuredCollection,
+    recommendedProducts,
+    collections,
+  })
 }
 
 export default function Homepage() {
@@ -36,7 +40,7 @@ export default function Homepage() {
   return (
     <div className='home'>
       <FeaturedCollection
-        collection={data.featuredCollection}
+        collection={data['collections']['nodes'][4]}
       />
       <RecommendedProducts
         products={data.recommendedProducts}
@@ -128,7 +132,7 @@ const FEATURED_COLLECTION_QUERY = `#graphql
   }
   query FeaturedCollection($country: CountryCode, $language: LanguageCode)
     @inContext(country: $country, language: $language) {
-    collections(first: 1, sortKey: UPDATED_AT, reverse: true) {
+    collections(first: 5, sortKey: UPDATED_AT, reverse: true) {
       nodes {
         ...FeaturedCollection
       }
