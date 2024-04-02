@@ -6,6 +6,7 @@ import {
 } from '@remix-run/react'
 import { Suspense } from 'react'
 import { Image, Money } from '@shopify/hydrogen'
+import { ProductGrid } from '../components/Layout'
 
 /**
  * @type {MetaFunction}
@@ -79,14 +80,14 @@ function FeaturedCollection({ collection }) {
  */
 function RecommendedProducts({ products }) {
   return (
-    <div className='recommended-products'>
+    <ProductGrid>
       <h2 style={{ fontWeight: 'bold', fontSize: '24px' }}>
         Featured Products
       </h2>
       <Suspense fallback={<div>Loading...</div>}>
         <Await resolve={products}>
           {({ products }) => (
-            <div className='recommended-products-grid'>
+            <ProductGrid>
               {products.nodes.map((product) => (
                 <Link
                   key={product.id}
@@ -108,12 +109,12 @@ function RecommendedProducts({ products }) {
                   </small>
                 </Link>
               ))}
-            </div>
+            </ProductGrid>
           )}
         </Await>
       </Suspense>
       <br />
-    </div>
+    </ProductGrid>
   )
 }
 
