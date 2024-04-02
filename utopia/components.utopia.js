@@ -17,7 +17,12 @@ const Components = {
           width: Utopia.numberControl(),
         }),
         // loader is omitted, we don't have a control description for functions yet
-        // srcSetOptions is omitted, we don't have a control description for optional props yet
+        srcSetOptions: Utopia.objectControl({
+            intervals: Utopia.numberControl(),
+            startingWidth: Utopia.numberControl(),
+            incrementSize: Utopia.numberControl(),
+            placeholderWidth: Utopia.numberControl(),
+        })
       },
       supportsChildren: false,
       variants: [],
