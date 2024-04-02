@@ -1,5 +1,6 @@
 import * as Utopia from 'utopia-api'
 import { Image } from '@shopify/hydrogen'
+import { RecommendedProductsGrid } from '../app/components/Layout'
 
 const ImageTypeControl = Utopia.objectControl({
   altText: Utopia.stringControl(),
@@ -27,6 +28,14 @@ const Components = {
         }),
       },
       supportsChildren: false,
+      variants: [],
+    },
+  },
+  '/app/components/Layout': {
+    RecommendedProductsGrid: {
+      component: RecommendedProductsGrid,
+      supportsChildren: true,
+      properties: {},
       variants: [],
     },
   },
