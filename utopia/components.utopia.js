@@ -2,12 +2,12 @@ import * as Utopia from 'utopia-api'
 import { Image, Money } from '@shopify/hydrogen'
 import { RecommendedProductsGrid } from '../app/components/Layout'
 
-const ImageCropControl = Utopia.expressionPopupListControl([
-  Utopia.expression('top', '"top"'),
-  Utopia.expression('center', '"center"'),
-  Utopia.expression('bottom', '"bottom"'),
-  Utopia.expression('left', '"left"'),
-  Utopia.expression('right', '"right"'),
+const ImageCropControl = Utopia.popupListControl([
+  { value: 'top', label: 'top' },
+  { value: 'center', label: 'center' },
+  { value: 'bottom', label: 'bottom' },
+  { value: 'left', label: 'left' },
+  { value: 'right', label: 'right' },
 ])
 
 const ImageTypeControl = Utopia.objectControl({
