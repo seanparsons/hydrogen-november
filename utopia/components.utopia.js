@@ -41,21 +41,48 @@ const UnitPriceMeasurementMeasuredUnit =
   Utopia.popupListControl([
     {
       label: 'CL',
-      value: 'va100 centiliters equals 1 liter.',
+      value: 'Centiliter',
     },
     {
       value: 'CM',
-      label: '100 centimeters equals 1 meter.',
+      label: 'Centimeter',
     },
     {
       value: 'G',
-      label: 'Metric system unit of weight.',
+      label: 'Gram',
     },
     {
       value: 'KG',
-      label: '1 kilogram equals 1000 grams.',
+      label: 'Kilogram',
     },
-    // TODO: all values
+    {
+      value: 'L',
+      label: 'Liter',
+    },
+    {
+      value: 'M',
+      label: 'Meter',
+    },
+    {
+      value: 'M2',
+      label: 'Square meter',
+    },
+    {
+      value: 'M3',
+      label: 'Cubic meter',
+    },
+    {
+      value: 'MG',
+      label: 'Milligram',
+    },
+    {
+      value: 'ML',
+      label: 'Milliliter',
+    },
+    {
+      value: 'MM',
+      label: 'Millimeter',
+    },
   ])
 
 const MoneyV2Control = Utopia.objectControl({
@@ -67,19 +94,19 @@ const UnitPriceMeasurementControl = Utopia.objectControl({
   measuredType: Utopia.popupListControl([
     {
       value: 'AREA',
-      label: 'Unit of measurements representing areas.',
+      label: 'Area',
     },
     {
       value: 'LENGTH',
-      label: 'Unit of measurements representing lengths.',
+      label: 'Length',
     },
     {
       value: 'VOLUME',
-      label: 'Unit of measurements representing volumes.',
+      label: 'Volume',
     },
     {
       value: 'WEIGHT',
-      label: 'Unit of measurements representing weights.',
+      label: 'Weight',
     },
   ]),
   quantityUnit: UnitPriceMeasurementMeasuredUnit,
