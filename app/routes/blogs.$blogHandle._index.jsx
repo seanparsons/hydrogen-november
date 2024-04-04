@@ -1,6 +1,7 @@
 import {json} from '@shopify/remix-oxygen';
 import {Link, useLoaderData} from '@remix-run/react';
 import {Image, Pagination, getPaginationVariables} from '@shopify/hydrogen';
+import {BlogComponent} from '../components/Layout'
 
 /**
  * @type {MetaFunction<({ request, params, context: { storefront }, }: LoaderFunctionArgs) => unknown>}
@@ -41,34 +42,31 @@ export default function Blog() {
   const {articles} = blog;
 
   return (
-    <div className="blog">
-      <h1>{blog.title}</h1>
-      <div className="blog-grid">
-        <Pagination connection={articles}>
-          {({nodes, isLoading, PreviousLink, NextLink}) => {
-            return (
-              <>
-                <PreviousLink>
-                  {isLoading ? 'Loading...' : <span>↑ Load previous</span>}
-                </PreviousLink>
-                {nodes.map((article, index) => {
-                  return (
-                    <ArticleItem
-                      article={article}
-                      key={article.id}
-                      loading={index < 2 ? 'eager' : 'lazy'}
-                    />
-                  );
-                })}
-                <NextLink>
-                  {isLoading ? 'Loading...' : <span>Load more ↓</span>}
-                </NextLink>
-              </>
-            );
-          }}
-        </Pagination>
-      </div>
-    </div>
+    <BlogComponent title={<h1>{blog.title}</h1>}>
+      <Pagination connection={articles}>
+        {({nodes, isLoading, PreviousLink, NextLink}) => {
+          return (
+            <>
+              <PreviousLink>
+                {isLoading ? 'Loading...' : <span>↑ Load previous</span>}
+              </PreviousLink>
+              {nodes.map((article, index) => {
+                return (
+                  <ArticleItem
+                    article={article}
+                    key={article.id}
+                    loading={index < 2 ? 'eager' : 'lazy'}
+                  />
+                );
+              })}
+              <NextLink>
+                {isLoading ? 'Loading...' : <span>Load more ↓</span>}
+              </NextLink>
+            </>
+          );
+        }}
+      </Pagination>
+    </BlogComponent>
   );
 }
 

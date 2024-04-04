@@ -9,6 +9,13 @@ import {
   PredictiveSearchResults,
 } from '~/components/Search'
 
+export function BlogComponent({ title, children }) {
+  return <div className="blog">
+      {title}
+      {children}
+    </div>
+}
+
 export function RecommendedProductsGrid({ children }) {
   return (
     <div className='recommended-products-grid'>
