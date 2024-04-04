@@ -67,19 +67,19 @@ const UnitPriceMeasurementControl = Utopia.objectControl({
   measuredType: Utopia.popupListControl([
     {
       value: 'AREA',
-      label: 'Unit of measurements representing areas.',
+      label: 'Area',
     },
     {
       value: 'LENGTH',
-      label: 'Unit of measurements representing lengths.',
+      label: 'Length',
     },
     {
       value: 'VOLUME',
-      label: 'Unit of measurements representing volumes.',
+      label: 'Volume',
     },
     {
       value: 'WEIGHT',
-      label: 'Unit of measurements representing weights.',
+      label: 'Weight',
     },
   ]),
   quantityUnit: UnitPriceMeasurementMeasuredUnit,
