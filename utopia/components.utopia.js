@@ -1,6 +1,9 @@
 import * as Utopia from 'utopia-api'
 import { Image, Money } from '@shopify/hydrogen'
-import { RecommendedProductsGrid } from '../app/components/Layout'
+import {
+  RecommendedProductsGrid,
+  BlogComponent,
+} from '../app/components/Layout'
 
 const ImageCropControl = Utopia.popupListControl([
   { value: 'top', label: 'top' },
@@ -27,6 +30,10 @@ const CurrencyCodeControl = Utopia.popupListControl([
     value: 'AFN',
     label: 'Afghan Afghani (AFN).',
   },
+  {
+    value: 'EUR',
+    label: 'Euro (EUR).',
+  },
   // TODO: all currencies
 ])
 
@@ -51,13 +58,10 @@ const UnitPriceMeasurementMeasuredUnit =
     // TODO: all values
   ])
 
-const MoneyV2Control = Utopia.objectControl(
-  {
-    amount: Utopia.numberControl(),
-    currency: CurrencyCodeControl,
-  },
-  { required: true },
-)
+const MoneyV2Control = Utopia.objectControl({
+  amount: Utopia.stringControl(),
+  currencyCode: CurrencyCodeControl,
+})
 
 const UnitPriceMeasurementControl = Utopia.objectControl({
   measuredType: Utopia.popupListControl([
@@ -102,7 +106,16 @@ const Components = {
         }),
       },
       supportsChildren: false,
-      variants: [],
+      variants: [
+        {
+          label: 'Image',
+          code: "<Image data={{ altText: 'Example image', url: 'https://picsum.photos/200/300', height: 200, width: 300 }} />",
+        },
+        {
+          label: 'Cropped Image',
+          code: html`<Image crop='center' data={{ altText: 'Example image', url: 'https://picsum.photos/200/300', height: 200, width: 300 }} />`,
+        },
+      ],
     },
     Money: {
       component: Money,
@@ -114,7 +127,16 @@ const Components = {
         measurementSeparator: Utopia.jsxControl(),
       },
       supportsChildren: false,
-      variants: [],
+      variants: [
+        {
+          label: 'Money',
+          code: '<Money data={{ amount: "9.99", currencyCode: "EUR" }} />',
+        },
+        {
+          label: 'Money, without currency',
+          code: '<Money withoutCurrency data={{ amount: "9.99", currencyCode: "EUR" }} />',
+        },
+      ],
     },
   },
   '/app/components/Layout': {
@@ -123,6 +145,37 @@ const Components = {
       supportsChildren: true,
       properties: {},
       variants: [],
+    },
+    BlogComponent: {
+      component: BlogComponent,
+      supportsChildren: true,
+      properties: {
+        title: {
+          control: 'jsx',
+          preferredChildComponents: [
+            {
+              name: 'h1',
+              variants: [{ code: '<h1>Title</h1>' }],
+            },
+          ],
+        },
+        children: Utopia.arrayControl(Utopia.jsxControl()),
+      },
+      variants: [
+        {
+          label: 'Blog Post',
+          code: '<BlogComponent title={<h1>Title</h1>}><div>Blog Post</div></BlogComponent>',
+        },
+        {
+          label: 'Empty Blog Post',
+          code: '<BlogComponent title={<h1>Title</h1>} />',
+        },
+      ],
+      preferredChildComponents: [
+        {
+          name: 'div',
+        },
+      ],
     },
   },
 }
