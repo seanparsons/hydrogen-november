@@ -177,7 +177,7 @@ const Components = {
           code: '<Money data={{ amount: "9.99", currencyCode: "EUR" }} />',
         },
         {
-          label: 'Money',
+          label: 'Money, with measurement',
           code: '<Money data={{ amount: "9.99", currencyCode: "EUR" }} measurement={{ referenceValue: 1, referenceUnit: "KG", }} />',
         },
         {
