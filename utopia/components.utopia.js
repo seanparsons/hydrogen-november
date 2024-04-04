@@ -67,19 +67,19 @@ const UnitPriceMeasurementControl = Utopia.objectControl({
   measuredType: Utopia.popupListControl([
     {
       value: 'AREA',
-      label: 'Area',
+      label: 'Unit of measurements representing areas.',
     },
     {
       value: 'LENGTH',
-      label: 'Length',
+      label: 'Unit of measurements representing lengths.',
     },
     {
       value: 'VOLUME',
-      label: 'Volume',
+      label: 'Unit of measurements representing volumes.',
     },
     {
       value: 'WEIGHT',
-      label: 'Weight',
+      label: 'Unit of measurements representing weights.',
     },
   ]),
   quantityUnit: UnitPriceMeasurementMeasuredUnit,
@@ -124,7 +124,20 @@ const Components = {
         withoutCurrency: Utopia.checkboxControl(),
         withoutTrailingZeros: Utopia.checkboxControl(),
         measurement: UnitPriceMeasurementControl,
-        measurementSeparator: Utopia.jsxControl(),
+        measurementSeparator: {
+          control: 'jsx',
+          preferredChildComponents: [
+            {
+              name: 'span',
+              variants: [
+                {
+                  label: '/',
+                  code: '<span>/</span>',
+                },
+              ],
+            },
+          ],
+        },
       },
       supportsChildren: false,
       variants: [
