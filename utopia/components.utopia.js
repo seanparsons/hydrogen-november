@@ -113,7 +113,7 @@ const Components = {
         },
         {
           label: 'Cropped Image',
-          code: html`<Image crop='center' data={{ altText: 'Example image', url: 'https://picsum.photos/200/300', height: 200, width: 300 }} />`,
+          code: `<Image crop='center' data={{ altText: 'Example image', url: 'https://picsum.photos/200/300', height: 200, width: 300 }} />`,
         },
       ],
     },
