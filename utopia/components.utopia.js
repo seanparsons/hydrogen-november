@@ -161,6 +161,10 @@ const Components = {
                   label: '/',
                   code: '<span>/</span>',
                 },
+                {
+                  label: ' per ',
+                  code: '<span> per </span>',
+                },
               ],
             },
           ],
