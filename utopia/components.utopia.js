@@ -51,10 +51,13 @@ const UnitPriceMeasurementMeasuredUnit =
     // TODO: all values
   ])
 
-const MoneyV2Control = Utopia.objectControl({
-  amount: Utopia.numberControl(),
-  currency: CurrencyCodeControl,
-})
+const MoneyV2Control = Utopia.objectControl(
+  {
+    amount: Utopia.numberControl(),
+    currency: CurrencyCodeControl,
+  },
+  { required: true },
+)
 
 const UnitPriceMeasurementControl = Utopia.objectControl({
   measuredType: Utopia.popupListControl([
