@@ -48,5 +48,14 @@
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+   "utopia": {
+    "featuredRoutes": [
+      "/",
+      "/collections/unisex",
+      "/products/beanie",
+      "/blogs/news",
+      "/blogs/news/making-liquid"
+    ]
+  }
 }
