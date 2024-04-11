@@ -18,16 +18,28 @@ const contextGetter = getLoadContext(
 export var storyboard = (
   <Storyboard>
     <RemixScene
+      data-label="Desktop"
       style={{
         position: 'absolute',
-        width: 700,
-        height: 750,
-        left: 200,
-        top: 30,
+        width: 1024,
+        height: 'max-content',
+        left: 0,
+        top: 0,
         overflow: 'hidden',
       }}
       getLoadContext={contextGetter}
-      data-label="Mood Board"
+    />
+    <RemixScene
+      data-label="Tablet"
+      style={{
+        position: 'absolute',
+        width: 700,
+        height: 'max-content',
+        left: 1050,
+        top: 0,
+        overflow: 'hidden',
+      }}
+      getLoadContext={contextGetter}
     />
   </Storyboard>
 );
