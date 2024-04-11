@@ -53,7 +53,18 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
           Home
         </NavLink>
       )}
-      {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
+      {([
+        ...(menu || FALLBACK_HEADER_MENU).items,
+        {
+          id: '',
+          resourceId: null,
+          tags: [],
+          title: 'Promotions',
+          type: 'HTTP',
+          url: '/promotions',
+          items: [],
+        },
+      ]).items.map((item) => {
         if (!item.url) return null;
 
         // if the url is internal, we strip the domain
