@@ -64,7 +64,7 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
           url: '/promotions',
           items: [],
         },
-      ]).items.map((item) => {
+      ]).map((item) => {
         if (!item.url) return null;
 
         // if the url is internal, we strip the domain
