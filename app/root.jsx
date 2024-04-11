@@ -1,7 +1,6 @@
 import { useNonce } from '@shopify/hydrogen'
 import { defer } from '@shopify/remix-oxygen'
 import {
-  Links,
   Meta,
   Outlet,
   Scripts,
@@ -164,7 +163,9 @@ export function ErrorBoundary() {
           content='width=device-width,initial-scale=1'
         />
         <Meta />
-        <Links />
+        {/* Removed links, because it throws an exception when the actual route doesn't exist */}
+        {/* See https://github.com/concrete-utopia/utopia/issues/5218 }
+        {/* <Links /> */}
       </head>
       <body>
         <Layout {...rootData}>
