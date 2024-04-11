@@ -56,6 +56,9 @@
       "/products/beanie",
       "/blogs/news",
       "/blogs/news/making-liquid"
+    ],
+    "pageTemplates": [
+      { "label": "Promo Article", "path": "/app/routes/promotions.spring.jsx" }
     ]
   }
 }
