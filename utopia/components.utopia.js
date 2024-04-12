@@ -5,6 +5,8 @@ import {
   BlogComponent,
 } from '../app/components/Layout'
 
+import { Grid } from '../app/components/Components'
+
 const ImageCropControl = Utopia.popupListControl([
   { value: 'top', label: 'top' },
   { value: 'center', label: 'center' },
@@ -222,7 +224,7 @@ const Components = {
       },
       variants: [
         {
-          label: 'Blog Post',
+          label: '  Post',
           imports: `import { BlogComponent } from '/app/components/Layout';`,
           code: '<BlogComponent title={<h1>Title</h1>}><div>Blog Post</div></BlogComponent>',
         },
@@ -237,6 +239,21 @@ const Components = {
           name: 'div',
         },
       ],
+    },
+  },
+  '/app/components/Components': {
+    Grid: {
+      component: Grid,
+      properties: {
+        left: {
+          control: 'jsx',
+        },
+        right: {
+          control: 'jsx',
+        },
+      },
+      supportsChildren: false,
+      variants: [],
     },
   },
 }
