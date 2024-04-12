@@ -132,14 +132,15 @@ const Components = {
           placeholderWidth: Utopia.numberControl(),
         }),
       },
-      supportsChildren: false,
       variants: [
         {
           label: 'Image',
+          imports: `import { Image } from '@shopify/hydrogen'`,
           code: "<Image data={{ altText: 'Example image', url: 'https://picsum.photos/200/300', height: 200, width: 300 }} />",
         },
         {
           label: 'Cropped Image',
+          imports: `import { Image } from '@shopify/hydrogen'`,
           code: `<Image crop='center' data={{ altText: 'Example image', url: 'https://picsum.photos/200/300', height: 200, width: 300 }} />`,
         },
       ],
@@ -153,9 +154,9 @@ const Components = {
         measurement: UnitPriceMeasurementControl,
         measurementSeparator: {
           control: 'jsx',
-          preferredChildComponents: [
+          preferredContents: [
             {
-              name: 'span',
+              component: 'span',
               variants: [
                 {
                   label: '/',
@@ -174,14 +175,17 @@ const Components = {
       variants: [
         {
           label: 'Money',
+          imports: `import { Money } from '@shopify/hydrogen'`,
           code: '<Money data={{ amount: "9.99", currencyCode: "EUR" }} />',
         },
         {
           label: 'Money, with measurement',
+          imports: `import { Money } from '@shopify/hydrogen'`,
           code: '<Money data={{ amount: "9.99", currencyCode: "EUR" }} measurement={{ referenceValue: 1, referenceUnit: "KG", }} />',
         },
         {
           label: 'Money, without currency',
+          imports: `import { Money } from '@shopify/hydrogen'`,
           code: '<Money withoutCurrency data={{ amount: "9.99", currencyCode: "EUR" }} />',
         },
       ],
@@ -196,14 +200,21 @@ const Components = {
     },
     BlogComponent: {
       component: BlogComponent,
-      supportsChildren: true,
+      children: {
+        preferredContents: {
+          component: 'div',
+          variants: { name: 'div' },
+        },
+      },
       properties: {
         title: {
           control: 'jsx',
-          preferredChildComponents: [
+          preferredContents: [
             {
-              name: 'h1',
-              variants: [{ code: '<h1>Title</h1>' }],
+              component: 'h1',
+              variants: [
+                { label: 'Title', code: '<h1>Title</h1>' },
+              ],
             },
           ],
         },
@@ -212,10 +223,12 @@ const Components = {
       variants: [
         {
           label: 'Blog Post',
+          imports: `import { BlogComponent } from '/app/components/Layout';`,
           code: '<BlogComponent title={<h1>Title</h1>}><div>Blog Post</div></BlogComponent>',
         },
         {
           label: 'Empty Blog Post',
+          imports: `import { BlogComponent } from '/app/components/Layout';`,
           code: '<BlogComponent title={<h1>Title</h1>} />',
         },
       ],
