@@ -1,7 +1,10 @@
-import * as React from 'react';
-import {Storyboard, RemixScene} from 'utopia-api';
+import * as React from 'react'
+import { Storyboard, RemixScene } from 'utopia-api'
 
-import {getLoadContext} from '../server';
+import { getLoadContext } from '../server'
+import { Grid } from '/app/components/Components'
+import { Section } from '/app/components/Components'
+import { Image } from '@shopify/hydrogen'
 
 const contextGetter = getLoadContext(
   {
@@ -13,12 +16,12 @@ const contextGetter = getLoadContext(
   },
   // Demo cart ID obtained from https://mock.shop/create-cart
   'gid://shopify/Cart/Z2NwLXVzLWNlbnRyYWwxOjAxSEhKQ0I3RFoySlY3Mk5ORlhUVEo2RjhU',
-);
+)
 
 export var storyboard = (
   <Storyboard>
     <RemixScene
-      data-label="Desktop"
+      data-label='Desktop'
       style={{
         position: 'absolute',
         width: 1024,
@@ -28,9 +31,10 @@ export var storyboard = (
         overflow: 'hidden',
       }}
       getLoadContext={contextGetter}
+      commentId='bjt'
     />
     <RemixScene
-      data-label="Tablet"
+      data-label='Tablet'
       style={{
         position: 'absolute',
         width: 700,
@@ -40,6 +44,7 @@ export var storyboard = (
         overflow: 'hidden',
       }}
       getLoadContext={contextGetter}
+      commentId='bkd'
     />
   </Storyboard>
-);
+)
