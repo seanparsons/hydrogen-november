@@ -53,7 +53,7 @@
     "featuredRoutes": [
       "/",
       "/collections/unisex",
-      "/products/beanie",
+      "/products/beanie?Color=Green",
       "/blogs/news",
       "/blogs/news/making-liquid"
     ],
