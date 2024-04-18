@@ -89,7 +89,12 @@ const Components = {
           {
             component: 'Column',
             moduleName: '/app/components/Components',
-            variants: { name: 'Row' },
+            variants: { name: 'Column' },
+          },
+          {
+            component: 'Section',
+            moduleName: '/app/components/Components',
+            variants: { name: 'Section' },
           },
         ],
       },
@@ -103,7 +108,25 @@ const Components = {
         wrap: Utopia.checkboxControl(),
         gap: Utopia.numberControl(),
       },
-      children: 'supported',
+      children: {
+        preferredContents: [
+          {
+            component: 'Row',
+            moduleName: '/app/components/Components',
+            variants: { name: 'Row' },
+          },
+          {
+            component: 'Column',
+            moduleName: '/app/components/Components',
+            variants: { name: 'Column' },
+          },
+          {
+            component: 'Section',
+            moduleName: '/app/components/Components',
+            variants: { name: 'Section' },
+          },
+        ],
+      },
       focus: 'always',
     },
     Column: {
@@ -114,7 +137,25 @@ const Components = {
         wrap: Utopia.checkboxControl(),
         gap: Utopia.numberControl(),
       },
-      children: 'supported',
+      children: {
+        preferredContents: [
+          {
+            component: 'Row',
+            moduleName: '/app/components/Components',
+            variants: { name: 'Row' },
+          },
+          {
+            component: 'Column',
+            moduleName: '/app/components/Components',
+            variants: { name: 'Column' },
+          },
+          {
+            component: 'Section',
+            moduleName: '/app/components/Components',
+            variants: { name: 'Section' },
+          },
+        ],
+      },
       focus: 'always',
     },
   },

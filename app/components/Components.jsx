@@ -68,7 +68,7 @@ export const Card = ({
   </div>
 )
 
-const Section = ({ padded }) => (
+export const Section = ({ padded }) => (
   <div
     style={{
       padding: padded ? '1em' : null,
@@ -80,7 +80,7 @@ const Section = ({ padded }) => (
   </div>
 )
 
-const Row = ({ padded, centered, wrap, gap }) => (
+export const Row = ({ padded, centered, wrap, gap }) => (
   <div
     style={{
       display: 'flex',
@@ -95,7 +95,7 @@ const Row = ({ padded, centered, wrap, gap }) => (
   </div>
 )
 
-const Column = ({ padded, centered, wrap, gap }) => (
+export const Column = ({ padded, centered, wrap, gap }) => (
   <div
     style={{
       display: 'flex',
