@@ -93,7 +93,7 @@ const Components = {
           },
         ],
       },
-      focus: 'never',
+      focus: 'always',
     },
     Row: {
       component: Row,
@@ -104,7 +104,7 @@ const Components = {
         gap: Utopia.numberControl(),
       },
       children: 'supported',
-      focus: 'never',
+      focus: 'always',
     },
     Column: {
       component: Column,
@@ -115,7 +115,7 @@ const Components = {
         gap: Utopia.numberControl(),
       },
       children: 'supported',
-      focus: 'never',
+      focus: 'always',
     },
   },
 }
