@@ -98,7 +98,7 @@ const Components = {
           },
         ],
       },
-      focus: 'always',
+      focus: 'never',
     },
     Row: {
       component: Row,
@@ -127,7 +127,7 @@ const Components = {
           },
         ],
       },
-      focus: 'always',
+      focus: 'never',
     },
     Column: {
       component: Column,
@@ -156,7 +156,7 @@ const Components = {
           },
         ],
       },
-      focus: 'always',
+      focus: 'never',
     },
   },
 }
