@@ -42,52 +42,6 @@ export const Footer = ({ children }) => <h1>{children}</h1>
 export const Text = ({ children }) => <h1>{children}</h1>
 export const Button = ({ children }) => <h1>{children}</h1>
 
-export const Row = ({
-  content,
-  moreContent,
-  evenMoreContent,
-  padded,
-  gap,
-  tall,
-}) => (
-  <div
-    style={{
-      display: 'flex',
-      flexGrow: 1,
-      padding: padded ? '10px' : 0,
-      gap: gap ? '10px' : 0,
-      height: tall ? '250px' : null,
-      alignItems: tall ? 'center' : null,
-      justifyContent: tall ? 'center' : null,
-    }}
-  >
-    {content}
-    {moreContent}
-    {evenMoreContent}
-  </div>
-)
-export const Column = ({
-  content,
-  moreContent,
-  evenMoreContent,
-  padded,
-  gap,
-}) => (
-  <div
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      padding: padded ? '10px' : 0,
-      gap: gap ? '10px' : 0,
-      width: '100%',
-    }}
-  >
-    {content}
-    {moreContent}
-    {evenMoreContent}
-  </div>
-)
-
 export const Card = ({
   content,
   padded,
@@ -114,21 +68,45 @@ export const Card = ({
   </div>
 )
 
-export const Section = ({
-  content,
-  moreContent,
-  evenMoreContent,
-  padded,
-  gap,
-}) => (
+export const Section = ({ padded }) => (
   <div
     style={{
-      padding: padded ? '20px' : 0,
-      minHeight: 400,
-      width: '100%',
+      padding: padded ? '1em' : null,
+      height: '.85vh',
+      ...props.style,
     }}
   >
-    {content}
+    {props.children}
+  </div>
+)
+
+export const Row = ({ padded, centered, wrap, gap }) => (
+  <div
+    style={{
+      display: 'flex',
+      padding: padded ? '1em' : null,
+      justifyContent: centered ? 'center' : null,
+      gap: gap,
+      flexWrap: wrap ? 'wrap' : 'no-wrap',
+      ...props.style,
+    }}
+  >
+    {props.children}
+  </div>
+)
+
+export const Column = ({ padded, centered, wrap, gap }) => (
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: 'column, padding: padded'
+        ? '1em'
+        : null,
+      gap: gap,
+      ...props.style,
+    }}
+  >
+    {props.children}
   </div>
 )
 export const Page = ({ content, padded, gap }) => (
