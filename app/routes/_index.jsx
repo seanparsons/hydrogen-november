@@ -7,6 +7,7 @@ import {
 import { Suspense } from 'react'
 import { Image, Money } from '@shopify/hydrogen'
 import { RecommendedProductsGrid } from '../components/Layout'
+import { Section } from '/app/components/Components.jsx'
 
 /**
  * @type {MetaFunction}
@@ -78,7 +79,7 @@ function FeaturedCollection({ collection }) {
  *   products: Promise<RecommendedProductsQuery>;
  * }}
  */
-function RecommendedProducts({ products }) {
+export function RecommendedProducts({ products }) {
   return (
     <div className='recommended-products'>
       <h2 style={{ fontWeight: 'bold', fontSize: '24px' }}>

@@ -27,16 +27,6 @@ export const Grid = ({ left, right, padded, gap }) => (
   </div>
 )
 
-export const Image = ({ source, rounded }) => (
-  <img
-    src='https://greendroprecycling.com/wp-content/uploads/2017/04/GreenDrop_Station_Aluminum_Can_1.jpg'
-    style={{
-      width: 300,
-      borderRadius: rounded ? '20px' : 0,
-    }}
-  />
-)
-
 export const Heading = ({ children }) => <h1>{children}</h1>
 export const Footer = ({ children }) => <h1>{children}</h1>
 export const Text = ({ children }) => <h1>{children}</h1>
@@ -91,6 +81,7 @@ export const Row = ({
   <div
     style={{
       display: 'flex',
+      flexDirection: 'row',
       padding: padded ? '1em' : null,
       justifyContent: centered ? 'center' : null,
       gap: gap,
@@ -113,9 +104,8 @@ export const Column = ({
   <div
     style={{
       display: 'flex',
-      flexDirection: 'column, padding: padded'
-        ? '1em'
-        : null,
+      flexDirection: 'column',
+      padding: 'padded' ? '1em' : null,
       gap: gap,
       ...style,
     }}
