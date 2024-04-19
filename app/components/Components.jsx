@@ -68,19 +68,26 @@ export const Card = ({
   </div>
 )
 
-export const Section = ({ padded }) => (
+export const Section = ({ padded, style, children }) => (
   <div
     style={{
       padding: padded ? '1em' : null,
       height: '.85vh',
-      ...props.style,
+      ...style,
     }}
   >
-    {props.children}
+    {children}
   </div>
 )
 
-export const Row = ({ padded, centered, wrap, gap }) => (
+export const Row = ({
+  padded,
+  centered,
+  wrap,
+  gap,
+  style,
+  children,
+}) => (
   <div
     style={{
       display: 'flex',
@@ -88,14 +95,21 @@ export const Row = ({ padded, centered, wrap, gap }) => (
       justifyContent: centered ? 'center' : null,
       gap: gap,
       flexWrap: wrap ? 'wrap' : 'no-wrap',
-      ...props.style,
+      ...style,
     }}
   >
-    {props.children}
+    {children}
   </div>
 )
 
-export const Column = ({ padded, centered, wrap, gap }) => (
+export const Column = ({
+  padded,
+  centered,
+  wrap,
+  gap,
+  style,
+  children,
+}) => (
   <div
     style={{
       display: 'flex',
@@ -103,10 +117,10 @@ export const Column = ({ padded, centered, wrap, gap }) => (
         ? '1em'
         : null,
       gap: gap,
-      ...props.style,
+      ...style,
     }}
   >
-    {props.children}
+    {children}
   </div>
 )
 export const Page = ({ content, padded, gap }) => (
