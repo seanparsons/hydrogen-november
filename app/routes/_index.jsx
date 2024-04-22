@@ -90,7 +90,7 @@ export function RecommendedProducts({ products }) {
           {({ products }) => {
             return (
               <RecommendedProductsGrid>
-                {products.nodes.map((product) => (
+                {products.nodes.map((product, i) => (
                   <ProductCard
                     key={product.id}
                     id={product.id}
@@ -100,6 +100,7 @@ export function RecommendedProducts({ products }) {
                     price={
                       product.priceRange.minVariantPrice
                     }
+                    backgroundColorIndex={i}
                   />
                 ))}
               </RecommendedProductsGrid>
