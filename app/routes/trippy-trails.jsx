@@ -15,7 +15,15 @@ import {
   Stars,
 } from '~/components/Components'
 
-export const ReviewCard = ({ children, style }) => (
+export const ReviewCard = ({
+  children,
+  style,
+  rating,
+  title,
+  text,
+  country,
+  name,
+}) => (
   <div
     style={{
       width: 372,
@@ -27,20 +35,22 @@ export const ReviewCard = ({ children, style }) => (
       padding: '27px 24px',
     }}
   >
-    <Stars rating={5} style={{ transform: 'scale(1.2)' }} />
+    <Stars rating={rating} />
     <Text
-      level='elevated'
+      level='embiggened'
       style={{
         marginTop: 14,
         marginBottom: 8,
         fontWeight: 'bold',
       }}
     >
-      Very Noice!!
+      {title}
     </Text>
-    <Text level='smaller'>
-      Lorem ipsum dolor sit amet, consectetur adipiscing
-      elit. Pellentesque.
+    <Text level='smaller' deemphasized>
+      {text}
+    </Text>
+    <Text level='smaller' style={{ marginTop: 8 }}>
+      {country}&nbsp; {name}
     </Text>
   </div>
 )
@@ -179,24 +189,31 @@ export default function LandingPage() {
           />
         </Column>
       </Section>
-      <Section style={{ background: 'white' }}>
+      <Section
+        style={{ background: 'white', paddingTop: 100 }}
+      >
         <Column centered>
           <Column
             centered
             style={{
-              paddingLeft: '15em',
-              paddingRight: '15em',
+              paddingLeft: '18em',
+              paddingRight: '18em',
+              marginBottom: 50,
             }}
           >
             <SectionSubtitle>
               They love us ❤️
             </SectionSubtitle>
-            <SectionTitle>
+            <SectionTitle style={{ marginTop: 8 }}>
               some of our happy faces
             </SectionTitle>
             <Text
               level='large'
-              style={{ marginTop: 16, marginBottom: 16 }}
+              style={{
+                marginTop: 16,
+                marginBottom: 16,
+                textAlign: 'center',
+              }}
             >
               We offer some special services through which
               you can easily complete the marketing work on
@@ -205,10 +222,27 @@ export default function LandingPage() {
             </Text>
           </Column>
           <Row gap={27} style={{ marginBottom: 36 }}>
-            <ReviewCard></ReviewCard>
-            <ReviewCard></ReviewCard>
-            <ReviewCard></ReviewCard>
-            <ReviewCard></ReviewCard>
+            <ReviewCard
+              rating={5}
+              title='Very Noice'
+              text='Nel mezzo del cammin di nostra vita mi ritrovai per una selva oscura'
+              country='🇦🇺'
+              name='Joe Pesci'
+            />
+            <ReviewCard
+              rating={4}
+              title='Now you listen to me'
+              text='A friend should always underestimate your virtues and an enemy overestimate your faults'
+              country='🇮🇹'
+              name='Mario Puzo'
+            />
+            <ReviewCard
+              rating={4}
+              title='Something to know about backpacks'
+              text='Wearing a turtleneck is like being strangled by a really weak guy, all day. Wearing a backpack and a turtleneck is like a weak midget trying to bring you down'
+              country='🇺🇸'
+              name='Johnny Hands'
+            />
           </Row>
 
           <Row gap={27}>
