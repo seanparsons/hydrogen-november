@@ -10,10 +10,12 @@ import {
 } from '~/components/Search'
 
 export function BlogComponent({ title, children }) {
-  return <div className="blog">
+  return (
+    <div className='blog'>
       {title}
       {children}
     </div>
+  )
 }
 
 export function RecommendedProductsGrid({ children }) {
@@ -48,13 +50,14 @@ export function Layout({
         isLoggedIn={isLoggedIn}
       />
       <main>{children}</main>
-      <Suspense>
+      {/* TODO Fix Footer */}
+      {/* <Suspense>
         <Await resolve={footer}>
           {(footer) => (
             <Footer menu={footer.menu} shop={header.shop} />
           )}
         </Await>
-      </Suspense>
+      </Suspense> */}
     </>
   )
 }

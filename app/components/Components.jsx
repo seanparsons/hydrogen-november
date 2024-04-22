@@ -199,3 +199,7 @@ export const TrippyButton = ({ children, price }) => (
     )}
   </button>
 )
+
+export const Spacer = ({ height }) => (
+  <div style={{ height: height ?? 36 }} />
+)
