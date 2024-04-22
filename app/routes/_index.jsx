@@ -7,7 +7,6 @@ import {
 import { Suspense } from 'react'
 import { Image, Money } from '@shopify/hydrogen'
 import { RecommendedProductsGrid } from '../components/Layout'
-import { Section } from '/app/components/Components.jsx'
 
 /**
  * @type {MetaFunction}
