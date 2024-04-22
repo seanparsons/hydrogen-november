@@ -28,6 +28,7 @@ export const SectionTitle = ({ style, children }) => (
       lineHeight: '120%',
       padding: 0,
       margin: 0,
+      textAlign: 'center',
       ...style,
     }}
   >
@@ -42,6 +43,7 @@ export const SubsectionTitle = ({ style, children }) => (
       lineHeight: '120%',
       padding: 0,
       margin: 0,
+      textAlign: 'center',
       ...style,
     }}
   >
@@ -57,6 +59,7 @@ export const SectionSubtitle = ({ style, children }) => (
       lineHeight: '140%',
       padding: 0,
       margin: 0,
+      textAlign: 'center',
       ...style,
     }}
   >
@@ -67,6 +70,7 @@ export const SectionSubtitle = ({ style, children }) => (
 export const Text = ({
   level,
   deemphasized,
+  emboldened,
   children,
   style,
 }) => {
@@ -75,15 +79,15 @@ export const Text = ({
     fontFamily: 'Amiko',
   }
   const large = { fontSize: '20px' }
-  const elevated = { fontSize: '17px' }
+  const embiggened = { fontSize: '17px' }
   const regular = { fontSize: '16px' }
   const smaller = { fontSize: '15px' }
 
   const resultingStyle =
     level === 'large'
       ? large
-      : level === 'elevated'
-      ? elevated
+      : level === 'embiggened'
+      ? embiggened
       : level === 'regular'
       ? regular
       : smaller
@@ -93,7 +97,8 @@ export const Text = ({
       style={{
         ...defaultText,
         ...resultingStyle,
-        opacity: deemphasized ? 0.5 : 1,
+        opacity: deemphasized ? 0.7 : 1,
+        fontWeight: emboldened ? 'bold' : 'regular',
         ...style,
       }}
     >
