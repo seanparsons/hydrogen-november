@@ -483,7 +483,7 @@ export const ProductCard = ({
         <Image data={image} aspectRatio='1/1' width={250} />
       </Column>
       <Column
-        gap={15}
+        gap={'1.5em'}
         padded
         centered
         style={{
@@ -493,17 +493,22 @@ export const ProductCard = ({
         }}
       >
         <Column style={{ alignSelf: 'flex-start' }}>
-          <h4>{title}</h4>
+          <SectionSubtitle>{title}</SectionSubtitle>
           <Stars
             rating={5}
             style={{
               zoom: '0.6',
               gap: 3,
-              padding: '1em 0',
+              marginTop: '0.5em',
             }}
           />
-          <h5>Colors available</h5>
-          <ColorOptions />
+          <Column
+            gap={'0.5em'}
+            style={{ marginTop: '1em' }}
+          >
+            <Text>Colors available</Text>
+            <ColorOptions />
+          </Column>
         </Column>
         <TrippyButton
           style={{ zoom: 0.8 }}
@@ -511,7 +516,9 @@ export const ProductCard = ({
         >
           Add to cart
         </TrippyButton>
-        <h5>View Details ❯</h5>
+        <Text style={{ fontWeight: 700 }}>
+          View Details ❯
+        </Text>
       </Column>
     </Link>
   )
