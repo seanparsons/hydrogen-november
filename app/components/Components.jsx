@@ -9,6 +9,8 @@
 // .regular             { font-size: 16px; line-height: 140%; }
 // .smaller     { font-size: 15px; line-height: 140%; }
 
+import { StarIcon } from '@heroicons/react/24/solid'
+
 export const PageTitle = ({ style, children }) => (
   <h1
     style={{ fontSize: 60, lineHeight: '120%', ...style }}
@@ -321,4 +323,104 @@ export const TrippyButton = ({ children, price }) => (
 
 export const Spacer = ({ height }) => (
   <div style={{ height: height ?? 36 }} />
+)
+
+export const Stars = ({ rating }) => (
+  <Row style={{ justifyContent: 'flex-start' }}>
+    {Array.from({ length: rating ?? 1 }).map((_, i) => {
+      // return <div>hi</div>
+      return (
+        <StarIcon
+          key={'star' + i}
+          style={{ width: 20, color: 'orange' }}
+        />
+      )
+    })}
+  </Row>
+)
+
+export const QuoteWithRating = ({
+  quote,
+  rating,
+  backgroundColor,
+  style,
+}) => (
+  <div
+    style={{
+      boxSizing: 'border-box',
+      contain: 'layout',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      ...style,
+    }}
+  >
+    <div
+      style={{
+        position: 'relative',
+        top: 10,
+        backgroundColor: 'var(--color-light)',
+        borderRadius: 12,
+        padding: '3px 8px',
+      }}
+    >
+      <Stars rating={rating} />
+    </div>
+    <div
+      style={{
+        boxSizing: 'border-box',
+        width: 250,
+        backgroundColor: backgroundColor ?? null,
+        color: 'var(--color-light)',
+        padding: '1em',
+        borderRadius: 12,
+      }}
+    >
+      {quote}
+    </div>
+  </div>
+)
+
+export const DuplicatedImageWithBackground = ({
+  image,
+  backgroundColor,
+}) => (
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: 10,
+    }}
+  >
+    <div
+      style={{
+        position: 'relative',
+        top: 70,
+        width: 350,
+        height: 325,
+        backgroundColor: backgroundColor ?? null,
+        borderRadius: 20,
+      }}
+    />
+    <img
+      style={{
+        position: 'absolute',
+        top: 10,
+        left: 242,
+        scale: '0.8',
+      }}
+      srcSet={image + ' 2x'}
+      alt=''
+    />
+    <img
+      style={{
+        position: 'absolute',
+        top: 10,
+        left: 100,
+      }}
+      srcSet={image + ' 2x'}
+      alt=''
+    />
+  </div>
 )

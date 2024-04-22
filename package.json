@@ -11,6 +11,7 @@
     "codegen": "shopify hydrogen codegen"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.3",
     "@remix-run/react": "2.1.0",
     "@shopify/cli": "3.50.0",
     "@shopify/cli-hydrogen": "^6.0.0",
@@ -47,7 +48,7 @@
   "browserslist": [
     "defaults"
   ],
-   "utopia": {
+  "utopia": {
     "featuredRoutes": [
       "/",
       "/collections/unisex",
@@ -56,7 +57,10 @@
       "/blogs/news/making-liquid"
     ],
     "pageTemplates": [
-      { "label": "Promo Article", "path": "/app/routes/promotions.spring.jsx" }
+      {
+        "label": "Promo Article",
+        "path": "/app/routes/promotions.spring.jsx"
+      }
     ]
   }
 }
