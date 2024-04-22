@@ -6,9 +6,9 @@ import {
   TrippyButton,
 } from '~/components/Components'
 
-export default function Blog() {
+export default function LandingPage() {
   return (
-    <>
+    <Column>
       <div
         style={{
           opacity: 0.5,
@@ -21,6 +21,7 @@ export default function Blog() {
             'url(https://cdn.discordapp.com/attachments/703248722334842910/1231926200054583316/trippytrails.jpg?ex=6638bbae&is=662646ae&hm=0e5a7fd4ed51a811416af3dd6a93f8d0baf5b3956a3023bb4714579c81d597c0&)',
         }}
       ></div>
+      <Spacer height={'4em'} />
       <Section padded>
         <HalfAndHalf
           left={
@@ -38,7 +39,15 @@ export default function Blog() {
           right={<div>Placeholder</div>}
         />
       </Section>
-    </>
+      <Section padded>
+        <Spacer height={200} />
+      </Section>
+      <Section padded>
+        <Column centered>
+          <h3>And in comfort binds them</h3>
+        </Column>
+      </Section>
+    </Column>
   )
 }
 

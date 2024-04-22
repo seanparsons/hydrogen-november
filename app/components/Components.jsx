@@ -58,11 +58,16 @@ export const Card = ({
   </div>
 )
 
-export const Section = ({ padded, style, children }) => (
+export const Section = ({
+  padded,
+  style,
+  children,
+  minHeight,
+}) => (
   <section
     style={{
-      padding: padded ? '5em 10em' : null,
-      height: '.85vh',
+      padding: padded ? '1em 10em' : null,
+      minHeight: minHeight ? '85vh' : null,
       ...style,
     }}
   >
@@ -107,6 +112,7 @@ export const Column = ({
       flexDirection: 'column',
       padding: padded ? '1em' : null,
       gap: gap ?? null,
+      alignItems: centered ? 'center' : null,
       ...style,
     }}
   >
