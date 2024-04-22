@@ -75,7 +75,10 @@ export default function LandingPage() {
                   }
                   rating={5}
                   backgroundColor={'var(--dark-blue)'}
-                  style={{ position: 'relative', left: 75 }}
+                  style={{
+                    position: 'relative',
+                    left: 100,
+                  }}
                 />
               </div>
             }
