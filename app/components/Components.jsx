@@ -298,7 +298,11 @@ export const TwoFeatureCallout = ({
   />
 )
 
-export const TrippyButton = ({ children, price }) => (
+export const TrippyButton = ({
+  children,
+  price,
+  style,
+}) => (
   <button
     style={{
       display: 'flex',
@@ -315,6 +319,7 @@ export const TrippyButton = ({ children, price }) => (
       fontFamily: 'Amiko',
       fontSize: 18,
       fontWeight: 'bold',
+      ...style,
     }}
   >
     <span style={{ flexGrow: 1, textAlign: 'left' }}>
@@ -322,7 +327,7 @@ export const TrippyButton = ({ children, price }) => (
     </span>
     {price && (
       <Row gap={5}>
-        ${price}
+        {typeof price === 'string' ? '$' + price : price}
         <img
           src='shoppingbag_black_small@2x.png'
           width={24}
@@ -338,8 +343,8 @@ export const Spacer = ({ height }) => (
   <div style={{ height: height ?? 36 }} />
 )
 
-export const Stars = ({ rating }) => (
-  <Row style={{ justifyContent: 'flex-start' }}>
+export const Stars = ({ rating, style }) => (
+  <Row style={{ justifyContent: 'flex-start', ...style }}>
     {Array.from({ length: rating ?? 1 }).map((_, i) => {
       // return <div>hi</div>
       return (
@@ -438,26 +443,74 @@ export const DuplicatedImageWithBackground = ({
   </div>
 )
 
+const cardBackgroundColors = [
+  'var(--yellow)',
+  'var(--purple)',
+  'var(--orange)',
+  'var(--green)',
+]
+
 export const ProductCard = ({
   id,
   handle,
   image,
   title,
   price,
-}) => (
-  <Link
-    key={id}
-    className='recommended-product'
-    to={`/products/${handle}`}
-  >
-    <Image
-      data={image}
-      aspectRatio='1/1'
-      sizes='(min-width: 45em) 20vw, 50vw'
-    />
-    <h4>{title}</h4>
-    <small>
-      <Money data={price} />
-    </small>
-  </Link>
-)
+  backgroundColorIndex,
+}) => {
+  return (
+    <Link
+      key={id}
+      className='recommended-product'
+      to={`/products/${handle}`}
+    >
+      <Column centered style={{ contain: 'layout' }}>
+        <div
+          style={{
+            position: 'absolute',
+            zIndex: -1,
+            width: '100%',
+            height: '50%',
+            bottom: 0,
+            borderRadius: '10px 10px 0px 0px',
+            backgroundColor:
+              cardBackgroundColors?.[
+                backgroundColorIndex %
+                  cardBackgroundColors.length
+              ] ?? null,
+          }}
+        />
+        <Image data={image} aspectRatio='1/1' width={250} />
+      </Column>
+      <Column
+        padded
+        centered
+        style={{
+          borderRadius: '0 0 12px 12px',
+          border: '1px solid var(--stroke-light)',
+          borderTop: 'none',
+        }}
+      >
+        <Column style={{ alignSelf: 'flex-start' }}>
+          <h4>{title}</h4>
+          <Stars
+            rating={5}
+            style={{
+              zoom: '0.6',
+              gap: 3,
+              padding: '1em 0',
+            }}
+          />
+          <h5>Colors available</h5>
+        </Column>
+        <TrippyButton
+          style={{ zoom: 0.8, marginBottom: 30 }}
+          price={<Money data={price} />}
+        >
+          Add to cart
+        </TrippyButton>
+        <h5>View Details ❯</h5>
+      </Column>
+    </Link>
+  )
+}
