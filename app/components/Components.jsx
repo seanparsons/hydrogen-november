@@ -304,7 +304,7 @@ export const TrippyButton = ({
       width: 330,
       height: 70,
       boxShadow:
-        '-5px 5px 0px 0px #000, 0px 5px 0px 0px #000',
+        '-5px 5px 0px 0px #000, 0px 5px 0px 0px #000, inset 0px 0px 0px 1px #000',
       fontFamily: 'Amiko',
       fontSize: 18,
       fontWeight: 'bold',
@@ -472,6 +472,7 @@ export const ProductCard = ({
         <Image data={image} aspectRatio='1/1' width={250} />
       </Column>
       <Column
+        gap={15}
         padded
         centered
         style={{
@@ -491,9 +492,10 @@ export const ProductCard = ({
             }}
           />
           <h5>Colors available</h5>
+          <ColorOptions />
         </Column>
         <TrippyButton
-          style={{ zoom: 0.8, marginBottom: 30 }}
+          style={{ zoom: 0.8 }}
           price={<Money data={price} />}
         >
           Add to cart
@@ -503,3 +505,25 @@ export const ProductCard = ({
     </Link>
   )
 }
+
+export const ColorOption = ({ color }) => (
+  <div
+    style={{
+      width: 36,
+      height: 36,
+      borderRadius: '50%',
+      backgroundColor: color,
+      boxShadow:
+        '-3px 1px 0px 0px #000, inset 0px 0px 0px 1px #000',
+    }}
+  />
+)
+
+export const ColorOptions = () => (
+  <Row gap={10}>
+    <ColorOption color='var(--yellow)' />
+    <ColorOption color='var(--orange)' />
+    <ColorOption color='var(--green)' />
+    <ColorOption color='var(--purple)' />
+  </Row>
+)
