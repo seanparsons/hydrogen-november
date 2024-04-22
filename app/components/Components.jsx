@@ -320,7 +320,7 @@ export const TrippyButton = ({
       width: 330,
       height: 70,
       boxShadow:
-        '-5px 5px 0px 0px #000, 0px 5px 0px 0px #000',
+        '-5px 5px 0px 0px #000, 0px 5px 0px 0px #000, inset 0px 0px 0px 1px #000',
       fontFamily: 'Amiko',
       fontSize: 18,
       fontWeight: 'bold',
@@ -468,6 +468,7 @@ export const ProductCard = ({
       key={id}
       className='recommended-product'
       to={`/products/${handle}`}
+      style={{ textDecoration: 'none' }}
     >
       <Column centered style={{ contain: 'layout' }}>
         <div
@@ -488,6 +489,7 @@ export const ProductCard = ({
         <Image data={image} aspectRatio='1/1' width={250} />
       </Column>
       <Column
+        gap={'1.5em'}
         padded
         centered
         style={{
@@ -497,25 +499,99 @@ export const ProductCard = ({
         }}
       >
         <Column style={{ alignSelf: 'flex-start' }}>
-          <h4>{title}</h4>
+          <SectionSubtitle>{title}</SectionSubtitle>
           <Stars
             rating={5}
             style={{
               zoom: '0.6',
               gap: 3,
-              padding: '1em 0',
+              marginTop: '0.5em',
             }}
           />
-          <h5>Colors available</h5>
+          <Column
+            gap={'0.5em'}
+            style={{ marginTop: '1em' }}
+          >
+            <Text>Colors available</Text>
+            <ColorOptions />
+          </Column>
         </Column>
+        <Row
+          style={{
+            alignSelf: 'stretch',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
+          <Text>Add quantity</Text>
+          <QuantitySelector />
+        </Row>
         <TrippyButton
-          style={{ zoom: 0.8, marginBottom: 30 }}
+          style={{ zoom: 0.8 }}
           price={<Money data={price} />}
         >
           Add to cart
         </TrippyButton>
-        <h5>View Details ❯</h5>
+        <Text style={{ fontWeight: 700 }}>
+          View Details ❯
+        </Text>
       </Column>
     </Link>
   )
 }
+
+export const ColorOption = ({ color }) => (
+  <div
+    style={{
+      width: 36,
+      height: 36,
+      borderRadius: '50%',
+      backgroundColor: color,
+      boxShadow:
+        '-3px 1px 0px 0px #000, inset 0px 0px 0px 1px #000',
+    }}
+  />
+)
+
+export const ColorOptions = () => (
+  <Row gap={10}>
+    <ColorOption color='var(--yellow)' />
+    <ColorOption color='var(--orange)' />
+    <ColorOption color='var(--green)' />
+    <ColorOption color='var(--purple)' />
+  </Row>
+)
+
+export const CircleButton = ({ children }) => (
+  <Row
+    centered
+    style={{
+      width: 25,
+      height: 25,
+      borderRadius: '50%',
+      backgroundColor: 'var(--orange)',
+      alignItems: 'center',
+      paddingBottom: 2,
+      color: 'var(--color-light)',
+    }}
+  >
+    {children}
+  </Row>
+)
+
+export const QuantitySelector = () => (
+  <Row
+    centered
+    gap={15}
+    style={{
+      border: '1px solid var(--color-dark)',
+      borderRadius: 999,
+      padding: 6,
+      boxShadow: '-2px 3px 0px 0px #000',
+    }}
+  >
+    <CircleButton>-</CircleButton>
+    <Text style={{ paddingTop: 3 }}>1</Text>
+    <CircleButton>+</CircleButton>
+  </Row>
+)
