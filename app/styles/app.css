@@ -41,6 +41,15 @@ h2 {
   line-height: 60px; /* 125% */
 }
 
+h3 {
+  color: #040c0c;
+  font-family: Amiko;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 28px */
+}
+
 img {
   border-radius: 4px;
 }
