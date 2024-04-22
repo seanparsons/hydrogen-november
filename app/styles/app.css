@@ -27,6 +27,10 @@
   );
 }
 
+* {
+  box-sizing: border-box;
+}
+
 h1 {
   color: #040c0c;
   font-family: Amiko;
