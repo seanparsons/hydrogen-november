@@ -7,17 +7,38 @@
   --color-dark: #000;
   --color-light: #fff;
 
-/* Trippy Trails */
+  /* Trippy Trails */
 
-    --yellow: #FFC947;
-    --purple: #6E7CFF;
-    --orange: #FE5E35;
-    --green: #0D756B;
+  --yellow: #ffc947;
+  --purple: #6e7cff;
+  --orange: #fe5e35;
+  --green: #0d756b;
 
-    --stroke-dark: #2B152A;
+  --stroke-dark: #2b152a;
 
-    --purple-gradient: linear-gradient(102deg, #6E7CFF 3.16%, #4F5FF9 58.76%);
+  --purple-gradient: linear-gradient(
+    102deg,
+    #6e7cff 3.16%,
+    #4f5ff9 58.76%
+  );
+}
 
+h1 {
+  color: #040c0c;
+  font-family: Amiko;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 72px */
+}
+
+h2 {
+  color: #040c0c;
+  font-family: Amiko;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px; /* 125% */
 }
 
 img {
@@ -216,13 +237,17 @@ aside li {
 */
 .cart-main {
   height: 100%;
-  max-height: calc(100vh - var(--cart-aside-summary-height));
+  max-height: calc(
+    100vh - var(--cart-aside-summary-height)
+  );
   overflow-y: auto;
   width: auto;
 }
 
 .cart-main.with-discount {
-  max-height: calc(100vh - var(--cart-aside-summary-height-with-discount));
+  max-height: calc(
+    100vh - var(--cart-aside-summary-height-with-discount)
+  );
 }
 
 .cart-line {
@@ -354,7 +379,10 @@ aside li {
 .collections-grid {
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(var(--grid-item-width), 1fr)
+  );
   margin-bottom: 2rem;
 }
 
@@ -378,7 +406,10 @@ aside li {
 .products-grid {
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(var(--grid-item-width), 1fr)
+  );
   margin-bottom: 2rem;
 }
 
@@ -447,7 +478,10 @@ aside li {
 .blog-grid {
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(var(--grid-item-width), 1fr)
+  );
   margin-bottom: 2rem;
 }
 
