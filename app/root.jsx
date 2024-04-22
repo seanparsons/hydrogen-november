@@ -119,6 +119,20 @@ export default function App() {
   return (
     <html lang='en' style={{ backgroundColor: '#FFFFFF' }}>
       <head>
+        <link
+          rel='preconnect'
+          href='https://fonts.googleapis.com'
+        />
+        <link
+          rel='preconnect'
+          href='https://fonts.gstatic.com'
+          crossOrigin='anonymous'
+        />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&display=swap'
+          rel='stylesheet'
+        />
+
         <meta charSet='utf-8' />
         <meta
           name='viewport'
