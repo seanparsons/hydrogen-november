@@ -40,13 +40,15 @@ export default function LandingPage() {
         />
       </Section>
       <Section padded>
-        <Spacer height={200} />
+        <Spacer height={220} />
       </Section>
       <Section padded>
         <Column centered>
           <h3>And in comfort binds them</h3>
+          <h2>one bag to fit them all</h2>
         </Column>
       </Section>
+      <Section>hi!</Section>
     </Column>
   )
 }

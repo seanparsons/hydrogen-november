@@ -48,6 +48,7 @@ h3 {
   font-style: normal;
   font-weight: 700;
   line-height: 140%; /* 28px */
+  margin: 0px;
 }
 
 img {
