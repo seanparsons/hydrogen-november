@@ -4,6 +4,7 @@ import {
   Section,
   Spacer,
   TrippyButton,
+  SpecialRow,
 } from '~/components/Components'
 
 export default function LandingPage() {
@@ -48,7 +49,47 @@ export default function LandingPage() {
           <h2>one bag to fit them all</h2>
         </Column>
       </Section>
-      <Section>hi!</Section>
+      <Section style={{ padding: '3em 9em' }}>
+        <Column>
+          <SpecialRow
+            style={{
+              background: 'var(--purple',
+              color: 'white',
+            }}
+            left={
+              <img style={{ width: 420, height: 420 }} />
+            }
+            right={
+              <Column style={{ padding: '2em 0em' }}>
+                <h3
+                  style={{
+                    padding: '1em 8em 0em 0em',
+                    color: 'white',
+                    fontFamily: 'Amiko',
+                    fontSize: '40px',
+                    fontStyle: 'normal',
+                    fontWeight: 700,
+                    lineHeight: '120%',
+                  }}
+                >
+                  Amazing Pal for the Little Ones
+                </h3>
+                {/* TODO replace with remix link */}
+                <a
+                  style={{
+                    marginTop: '2em',
+                    color: 'white',
+                  }}
+                  href=''
+                >
+                  View Child Collection
+                </a>
+                {/* TODO TwoFeatureCallout */}
+              </Column>
+            }
+          />
+        </Column>
+      </Section>
     </Column>
   )
 }
