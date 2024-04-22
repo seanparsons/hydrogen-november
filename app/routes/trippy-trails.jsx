@@ -10,6 +10,7 @@ export default function Blog() {
     <>
       <div
         style={{
+          opacity: 0.5,
           position: 'absolute',
           zIndex: -1,
           top: 0,
@@ -22,13 +23,31 @@ export default function Blog() {
       <Section padded>
         <HalfAndHalf
           left={
-            <Column>
+            <Column gap={'1em'}>
               <h1>
                 We produce high quality bags for lifestyle
               </h1>
               <TrippyButton price={59}>
                 Add to Cart
               </TrippyButton>
+              <div style={{ height: 36 }} />
+              <div style={{ contain: 'layout' }}>
+                <div
+                  style={{
+                    position: 'absolute',
+                    zIndex: -1,
+                    width: 260,
+                    height: 260,
+                    bottom: 4,
+                    backgroundColor: 'var(--orange)',
+                    borderRadius: '10px 10px 0px 0px',
+                  }}
+                />
+                <img
+                  alt='woman seeking'
+                  srcSet='illustration/seeking@2x.png 2x'
+                />
+              </div>
             </Column>
           }
           right={<div>Placeholder</div>}
