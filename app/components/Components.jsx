@@ -23,7 +23,8 @@ export const PageTitle = ({ style, children }) => (
 export const SectionTitle = ({ style, children }) => (
   <h2
     style={{
-      fontSize: '60px',
+      fontFamily: 'Amiko',
+      fontSize: '48px',
       lineHeight: '120%',
       padding: 0,
       margin: 0,
@@ -36,6 +37,7 @@ export const SectionTitle = ({ style, children }) => (
 export const SubsectionTitle = ({ style, children }) => (
   <h3
     style={{
+      fontFamily: 'Amiko',
       fontSize: '40px',
       lineHeight: '120%',
       padding: 0,
@@ -50,6 +52,7 @@ export const SubsectionTitle = ({ style, children }) => (
 export const SectionSubtitle = ({ style, children }) => (
   <h5
     style={{
+      fontFamily: 'Amiko',
       fontSize: '20px',
       lineHeight: '140%',
       padding: 0,
@@ -67,27 +70,35 @@ export const Text = ({
   children,
   style,
 }) => {
+  const defaultText = {
+    lineHeight: '140%',
+    fontFamily: 'Amiko',
+  }
   const large = { fontSize: '20px' }
+  const elevated = { fontSize: '17px' }
   const regular = { fontSize: '16px' }
   const smaller = { fontSize: '15px' }
 
   const resultingStyle =
     level === 'large'
       ? large
+      : level === 'elevated'
+      ? elevated
       : level === 'regular'
       ? regular
       : smaller
 
   return (
-    <span
+    <div
       style={{
+        ...defaultText,
         ...resultingStyle,
         opacity: deemphasized ? 0.5 : 1,
         ...style,
       }}
     >
       {children}
-    </span>
+    </div>
   )
 }
 
