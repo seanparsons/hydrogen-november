@@ -88,11 +88,11 @@ export function RecommendedProducts({ products }) {
       <Suspense fallback={<div>Loading...</div>}>
         <Await resolve={products}>
           {({ products }) => {
-            console.log('resolved products', products)
             return (
               <RecommendedProductsGrid>
                 {products.nodes.map((product) => (
                   <ProductCard
+                    key={product.id}
                     id={product.id}
                     handle={product.handle}
                     image={product.images.nodes[0]}
