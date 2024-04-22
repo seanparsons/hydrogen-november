@@ -463,6 +463,7 @@ export const ProductCard = ({
       key={id}
       className='recommended-product'
       to={`/products/${handle}`}
+      style={{ textDecoration: 'none' }}
     >
       <Column centered style={{ contain: 'layout' }}>
         <div
@@ -510,6 +511,16 @@ export const ProductCard = ({
             <ColorOptions />
           </Column>
         </Column>
+        <Row
+          style={{
+            alignSelf: 'stretch',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
+          <Text>Add quantity</Text>
+          <QuantitySelector />
+        </Row>
         <TrippyButton
           style={{ zoom: 0.8 }}
           price={<Money data={price} />}
@@ -543,5 +554,39 @@ export const ColorOptions = () => (
     <ColorOption color='var(--orange)' />
     <ColorOption color='var(--green)' />
     <ColorOption color='var(--purple)' />
+  </Row>
+)
+
+export const CircleButton = ({ children }) => (
+  <Row
+    centered
+    style={{
+      width: 25,
+      height: 25,
+      borderRadius: '50%',
+      backgroundColor: 'var(--orange)',
+      alignItems: 'center',
+      paddingBottom: 2,
+      color: 'var(--color-light)',
+    }}
+  >
+    {children}
+  </Row>
+)
+
+export const QuantitySelector = () => (
+  <Row
+    centered
+    gap={15}
+    style={{
+      border: '1px solid var(--color-dark)',
+      borderRadius: 999,
+      padding: 6,
+      boxShadow: '-2px 3px 0px 0px #000',
+    }}
+  >
+    <CircleButton>-</CircleButton>
+    <Text style={{ paddingTop: 3 }}>1</Text>
+    <CircleButton>+</CircleButton>
   </Row>
 )

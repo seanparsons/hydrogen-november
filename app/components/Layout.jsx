@@ -8,6 +8,7 @@ import {
   PredictiveSearchForm,
   PredictiveSearchResults,
 } from '~/components/Search'
+import { Row } from './Components'
 
 export function BlogComponent({ title, children }) {
   return (
@@ -20,9 +21,9 @@ export function BlogComponent({ title, children }) {
 
 export function RecommendedProductsGrid({ children }) {
   return (
-    <div className='recommended-products-grid'>
+    <Row gap='3em' style={{ overflowX: 'scroll' }}>
       {children}
-    </div>
+    </Row>
   )
 }
 
