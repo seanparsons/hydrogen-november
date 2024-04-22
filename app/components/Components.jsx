@@ -156,6 +156,7 @@ export const HalfAndHalf = ({
   right,
   padded,
   gap,
+  style,
 }) => (
   <div
     style={{
@@ -163,6 +164,7 @@ export const HalfAndHalf = ({
       gridTemplateColumns: '1fr 1fr',
       padding: padded ? '20px' : 0,
       gap: gap ? '40px' : 0,
+      ...style,
     }}
   >
     {left}
