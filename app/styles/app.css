@@ -14,58 +14,13 @@
   --orange: #fe5e35;
   --green: #0d756b;
 
-  --lihgt-purple: #7E8BFF;
-  --dark-blue: #222FAB;
-
   --stroke-dark: #2b152a;
-  --stroke-light: #2b152a3f;
 
   --purple-gradient: linear-gradient(
     102deg,
     #6e7cff 3.16%,
     #4f5ff9 58.76%
   );
-}
-
-* {
-  box-sizing: border-box;
-}
-
-h1 {
-  color: #040c0c;
-  font-family: Amiko;
-  font-size: 60px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 120%; /* 72px */
-}
-
-h2 {
-  color: #040c0c;
-  font-family: Amiko;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 60px; /* 125% */
-}
-
-h3 {
-  color: #040c0c;
-  font-family: Amiko;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 140%; /* 28px */
-  margin: 0px;
-}
-
-h4 {
-  font-family: Amiko;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 125%; /* 20px */
-  margin: 0px;
 }
 
 img {

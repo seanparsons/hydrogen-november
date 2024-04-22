@@ -1,5 +1,6 @@
 import {
   Column,
+  Row,
   HalfAndHalf,
   Section,
   Spacer,
@@ -8,7 +9,41 @@ import {
   TwoFeatureCallout,
   QuoteWithRating,
   DuplicatedImageWithBackground,
+  SectionSubtitle,
+  SectionTitle,
+  Text,
+  Stars,
 } from '~/components/Components'
+
+export const ReviewCard = ({ children, style }) => (
+  <div
+    style={{
+      width: 372,
+      height: 200,
+      flexShrink: 0,
+      borderRadius: 17,
+      border: '1px solid #c5c5c5',
+      overflow: 'hidden',
+      padding: '27px 24px',
+    }}
+  >
+    <Stars rating={5} style={{ transform: 'scale(1.2)' }} />
+    <Text
+      level='elevated'
+      style={{
+        marginTop: 14,
+        marginBottom: 8,
+        fontWeight: 'bold',
+      }}
+    >
+      Very Noice!!
+    </Text>
+    <Text level='smaller'>
+      Lorem ipsum dolor sit amet, consectetur adipiscing
+      elit. Pellentesque.
+    </Text>
+  </div>
+)
 
 export default function LandingPage() {
   return (
@@ -142,6 +177,46 @@ export default function LandingPage() {
               </Column>
             }
           />
+        </Column>
+      </Section>
+      <Section style={{ background: 'white' }}>
+        <Column centered>
+          <Column
+            centered
+            style={{
+              paddingLeft: '15em',
+              paddingRight: '15em',
+            }}
+          >
+            <SectionSubtitle>
+              They love us ❤️
+            </SectionSubtitle>
+            <SectionTitle>
+              some of our happy faces
+            </SectionTitle>
+            <Text
+              level='large'
+              style={{ marginTop: 16, marginBottom: 16 }}
+            >
+              We offer some special services through which
+              you can easily complete the marketing work on
+              social media. Which helps increase your lead
+              and sales.
+            </Text>
+          </Column>
+          <Row gap={27} style={{ marginBottom: 36 }}>
+            <ReviewCard></ReviewCard>
+            <ReviewCard></ReviewCard>
+            <ReviewCard></ReviewCard>
+            <ReviewCard></ReviewCard>
+          </Row>
+
+          <Row gap={27}>
+            <ReviewCard></ReviewCard>
+            <ReviewCard></ReviewCard>
+            <ReviewCard></ReviewCard>
+            <ReviewCard></ReviewCard>
+          </Row>
         </Column>
       </Section>
     </Column>
