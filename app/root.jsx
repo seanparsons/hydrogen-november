@@ -10,7 +10,7 @@ import {
   useLoaderData,
   ScrollRestoration,
   isRouteErrorResponse,
-  Links
+  Links,
 } from '@remix-run/react'
 import favicon from '../public/favicon.svg'
 import resetStyles from './styles/reset.css'
@@ -119,20 +119,6 @@ export default function App() {
   return (
     <html lang='en' style={{ backgroundColor: '#FFFFFF' }}>
       <head>
-        <link
-          rel='preconnect'
-          href='https://fonts.googleapis.com'
-        />
-        <link
-          rel='preconnect'
-          href='https://fonts.gstatic.com'
-          crossorigin
-        />
-        <link
-          href='https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&display=swap'
-          rel='stylesheet'
-        />
-
         <meta charSet='utf-8' />
         <meta
           name='viewport'
@@ -141,7 +127,7 @@ export default function App() {
         <Meta />
         {/* We need to either move the loading of CSS someplace else instead of links() */}
         {/* or fix Links throwing an error when navigating to a 404 */}
-        <Links /> 
+        <Links />
       </head>
       <body>
         <Layout {...data}>
