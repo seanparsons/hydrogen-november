@@ -6,6 +6,7 @@ import {
   TrippyButton,
   SpecialRow,
   TwoFeatureCallout,
+  QuoteWithRating,
 } from '~/components/Components'
 
 export default function LandingPage() {
@@ -58,7 +59,15 @@ export default function LandingPage() {
               color: 'white',
             }}
             left={
-              <img style={{ width: 420, height: 420 }} />
+              <div>
+                <QuoteWithRating
+                  quote={
+                    'My 3 y/o loves it carrying daily to the school! ❤️'
+                  }
+                  rating={5}
+                  backgroundColor={'var(--dark-blue)'}
+                />
+              </div>
             }
             right={
               <Column style={{ padding: '2em 0em' }}>

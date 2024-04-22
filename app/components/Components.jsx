@@ -1,3 +1,5 @@
+import { StarIcon } from '@heroicons/react/24/solid'
+
 export const Title = ({ title, level }) => (
   <h1
     style={{
@@ -250,4 +252,58 @@ export const TrippyButton = ({ children, price }) => (
 
 export const Spacer = ({ height }) => (
   <div style={{ height: height ?? 36 }} />
+)
+
+export const Stars = ({ rating }) => (
+  <Row style={{ justifyContent: 'flex-start' }}>
+    {Array.from({ length: rating ?? 1 }).map((_, i) => {
+      // return <div>hi</div>
+      return (
+        <StarIcon
+          key={'star' + i}
+          style={{ width: 20, color: 'orange' }}
+        />
+      )
+    })}
+  </Row>
+)
+
+export const QuoteWithRating = ({
+  quote,
+  rating,
+  backgroundColor,
+}) => (
+  <div
+    style={{
+      boxSizing: 'border-box',
+      contain: 'layout',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    }}
+  >
+    <div
+      style={{
+        position: 'relative',
+        top: 10,
+        backgroundColor: 'var(--color-light)',
+        borderRadius: 12,
+        padding: '3px 8px',
+      }}
+    >
+      <Stars rating={rating} />
+    </div>
+    <div
+      style={{
+        boxSizing: 'border-box',
+        width: 250,
+        backgroundColor: backgroundColor ?? null,
+        color: 'var(--color-light)',
+        padding: '1em',
+        borderRadius: 12,
+      }}
+    >
+      {quote}
+    </div>
+  </div>
 )
