@@ -15,6 +15,7 @@
   --green: #0d756b;
 
   --stroke-dark: #2b152a;
+  --stroke-light: #2b152a3f;
 
   --purple-gradient: linear-gradient(
     102deg,
@@ -52,7 +53,6 @@ h3 {
 }
 
 h4 {
-  color: #040c0c;
   font-family: Amiko;
   font-size: 16px;
   font-style: normal;

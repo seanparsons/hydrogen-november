@@ -37,8 +37,8 @@ export const SpecialRow = ({
     style={{
       display: 'grid',
       gridTemplateColumns: inverted
-        ? '1.3fr 1fr'
-        : '1fr 1.3fr',
+        ? '1.2fr 1fr'
+        : '1fr 1.2fr',
       gap: '2em',
       ...style,
     }}
@@ -202,8 +202,9 @@ export const TwoFeatureCallout = ({
     style={{
       width: 530,
       height: 158,
-      border: '1px solid var(--stroke-dark)',
+      border: '1px solid var(--stroke-light)',
       borderRadius: 16,
+      color: 'var(--color-light)',
       ...style,
     }}
     left={left}

@@ -62,38 +62,39 @@ export default function LandingPage() {
             }
             right={
               <Column style={{ padding: '2em 0em' }}>
-                <h3
+                <h2
                   style={{
-                    padding: '1em 8em 0em 0em',
-                    color: 'white',
-                    fontFamily: 'Amiko',
-                    fontSize: '40px',
-                    fontStyle: 'normal',
-                    fontWeight: 700,
-                    lineHeight: '120%',
+                    color: 'var(--color-light)',
+                    fontSize: 40,
+                    paddingTop: '1em',
+                    lineHeight: '1.2em',
                   }}
                 >
                   Amazing Pal for the Little Ones
-                </h3>
+                </h2>
                 {/* TODO replace with remix link */}
                 <a
                   style={{
-                    marginTop: '2em',
+                    marginTop: '1em',
                     color: 'white',
                   }}
-                  href=''
+                  href='/'
                 >
                   View Child Collection
                 </a>
                 <TwoFeatureCallout
-                  style={{ marginTop: '1.4em' }}
+                  style={{
+                    marginTop: '1.4em',
+                  }}
                   left={
                     <Column padded>
                       <img
-                        srcset='feature-image-purple-01@2x.png 2x'
-                        alt='purple image 1'
+                        srcSet='illustration/feature-image-purple-02@2x.png 2x'
+                        alt='purple 1'
+                        width={55}
+                        height={55}
                       />
-                      <h5>No Shoulder Ache</h5>
+                      <h4>No Shoulder Ache</h4>
                       <p>
                         Lorem ipsum dolor sit amet,
                         consectetur
@@ -103,10 +104,12 @@ export default function LandingPage() {
                   right={
                     <Column padded>
                       <img
-                        srcset='feature-image-purple-01@2x.png 2x'
-                        alt='purple image 1'
+                        srcSet='illustration/feature-image-purple-01@2x.png 2x'
+                        width={55}
+                        height={55}
+                        alt='purple  1'
                       />
-                      <h5>No Shoulder Ache</h5>
+                      <h4>Stationery Pockets</h4>
                       <p>
                         Lorem ipsum dolor sit amet,
                         consectetur
