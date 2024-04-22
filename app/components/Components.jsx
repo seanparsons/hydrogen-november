@@ -10,6 +10,8 @@
 // .smaller     { font-size: 15px; line-height: 140%; }
 
 import { StarIcon } from '@heroicons/react/24/solid'
+import { Link } from '@remix-run/react'
+import { Image, Money } from '@shopify/hydrogen'
 
 export const PageTitle = ({ style, children }) => (
   <h1
@@ -423,4 +425,28 @@ export const DuplicatedImageWithBackground = ({
       alt=''
     />
   </div>
+)
+
+export const ProductCard = ({
+  id,
+  handle,
+  image,
+  title,
+  price,
+}) => (
+  <Link
+    key={id}
+    className='recommended-product'
+    to={`/products/${handle}`}
+  >
+    <Image
+      data={image}
+      aspectRatio='1/1'
+      sizes='(min-width: 45em) 20vw, 50vw'
+    />
+    <h4>{title}</h4>
+    <small>
+      <Money data={price} />
+    </small>
+  </Link>
 )

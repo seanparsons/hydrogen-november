@@ -7,6 +7,7 @@ import {
 import { Suspense } from 'react'
 import { Image, Money } from '@shopify/hydrogen'
 import { RecommendedProductsGrid } from '../components/Layout'
+import { ProductCard } from '~/components/Components'
 
 /**
  * @type {MetaFunction}
@@ -86,31 +87,24 @@ export function RecommendedProducts({ products }) {
       </h2>
       <Suspense fallback={<div>Loading...</div>}>
         <Await resolve={products}>
-          {({ products }) => (
-            <RecommendedProductsGrid>
-              {products.nodes.map((product) => (
-                <Link
-                  key={product.id}
-                  className='recommended-product'
-                  to={`/products/${product.handle}`}
-                >
-                  <Image
-                    data={product.images.nodes[0]}
-                    aspectRatio='1/1'
-                    sizes='(min-width: 45em) 20vw, 50vw'
+          {({ products }) => {
+            console.log('resolved products', products)
+            return (
+              <RecommendedProductsGrid>
+                {products.nodes.map((product) => (
+                  <ProductCard
+                    id={product.id}
+                    handle={product.handle}
+                    image={product.images.nodes[0]}
+                    title={product.title}
+                    price={
+                      product.priceRange.minVariantPrice
+                    }
                   />
-                  <h4>{product.title}</h4>
-                  <small>
-                    <Money
-                      data={
-                        product.priceRange.minVariantPrice
-                      }
-                    />
-                  </small>
-                </Link>
-              ))}
-            </RecommendedProductsGrid>
-          )}
+                ))}
+              </RecommendedProductsGrid>
+            )
+          }}
         </Await>
       </Suspense>
       <br />
