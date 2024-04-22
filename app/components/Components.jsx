@@ -59,15 +59,15 @@ export const Card = ({
 )
 
 export const Section = ({ padded, style, children }) => (
-  <div
+  <section
     style={{
-      padding: padded ? '1em' : null,
+      padding: padded ? '5em 10em' : null,
       height: '.85vh',
       ...style,
     }}
   >
     {children}
-  </div>
+  </section>
 )
 
 export const Row = ({
@@ -84,7 +84,7 @@ export const Row = ({
       flexDirection: 'row',
       padding: padded ? '1em' : null,
       justifyContent: centered ? 'center' : null,
-      gap: gap,
+      gap: gap ?? null,
       flexWrap: wrap ? 'wrap' : 'no-wrap',
       ...style,
     }}
@@ -105,8 +105,8 @@ export const Column = ({
     style={{
       display: 'flex',
       flexDirection: 'column',
-      padding: 'padded' ? '1em' : null,
-      gap: gap,
+      padding: padded ? '1em' : null,
+      gap: gap ?? null,
       ...style,
     }}
   >
@@ -143,4 +143,59 @@ export const MenuBar = () => (
     <div>Featured</div>
     <div>Just In</div>
   </div>
+)
+
+export const HalfAndHalf = ({
+  left,
+  right,
+  padded,
+  gap,
+}) => (
+  <div
+    style={{
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      padding: padded ? '20px' : 0,
+      gap: gap ? '40px' : 0,
+    }}
+  >
+    {left}
+    {right}
+  </div>
+)
+
+export const TrippyButton = ({ children, price }) => (
+  <button
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      padding: '10px 32px',
+      borderRadius: 10,
+      background: 'var(--yellow)',
+      color: 'var(--color-dark)',
+      border: 'none',
+      width: 330,
+      height: 70,
+      boxShadow:
+        '-5px 5px 0px 0px #000, 0px 5px 0px 0px #000',
+      fontFamily: 'Amiko',
+      fontSize: 18,
+      fontWeight: 'bold',
+    }}
+  >
+    <span style={{ flexGrow: 1, textAlign: 'left' }}>
+      {children}
+    </span>
+    {price && (
+      <Row gap={5}>
+        ${price}
+        <img
+          src='shoppingbag_black_small@2x.png'
+          width={24}
+          height={24}
+          alt=''
+        />
+      </Row>
+    )}
+  </button>
 )
