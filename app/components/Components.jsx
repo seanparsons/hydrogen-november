@@ -27,6 +27,27 @@ export const Grid = ({ left, right, padded, gap }) => (
   </div>
 )
 
+export const SpecialRow = ({
+  left,
+  right,
+  inverted,
+  style,
+}) => (
+  <div
+    style={{
+      display: 'grid',
+      gridTemplateColumns: inverted
+        ? '1.3fr 1fr'
+        : '1fr 1.3fr',
+      gap: '2em',
+      ...style,
+    }}
+  >
+    {left}
+    {right}
+  </div>
+)
+
 export const Heading = ({ children }) => <h1>{children}</h1>
 export const Footer = ({ children }) => <h1>{children}</h1>
 export const Text = ({ children }) => <h1>{children}</h1>
@@ -168,6 +189,22 @@ export const HalfAndHalf = ({
     {left}
     {right}
   </div>
+)
+
+export const TwoFeatureCallout = ({ left, right }) => (
+  <HalfAndHalf
+    style={{
+      position: 'relative',
+      top: 270,
+      left: 515,
+      width: 530,
+      height: 158,
+      border: '1px solid var(--stroke-dark)',
+      borderRadius: 16,
+    }}
+    left={left}
+    right={right}
+  />
 )
 
 export const TrippyButton = ({ children, price }) => (
