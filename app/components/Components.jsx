@@ -193,16 +193,18 @@ export const HalfAndHalf = ({
   </div>
 )
 
-export const TwoFeatureCallout = ({ left, right }) => (
+export const TwoFeatureCallout = ({
+  left,
+  right,
+  style,
+}) => (
   <HalfAndHalf
     style={{
-      position: 'relative',
-      top: 270,
-      left: 515,
       width: 530,
       height: 158,
       border: '1px solid var(--stroke-dark)',
       borderRadius: 16,
+      ...style,
     }}
     left={left}
     right={right}

@@ -5,6 +5,7 @@ import {
   Spacer,
   TrippyButton,
   SpecialRow,
+  TwoFeatureCallout,
 } from '~/components/Components'
 
 export default function LandingPage() {
@@ -84,7 +85,35 @@ export default function LandingPage() {
                 >
                   View Child Collection
                 </a>
-                {/* TODO TwoFeatureCallout */}
+                <TwoFeatureCallout
+                  style={{ marginTop: '1.4em' }}
+                  left={
+                    <Column padded>
+                      <img
+                        srcset='feature-image-purple-01@2x.png 2x'
+                        alt='purple image 1'
+                      />
+                      <h5>No Shoulder Ache</h5>
+                      <p>
+                        Lorem ipsum dolor sit amet,
+                        consectetur
+                      </p>
+                    </Column>
+                  }
+                  right={
+                    <Column padded>
+                      <img
+                        srcset='feature-image-purple-01@2x.png 2x'
+                        alt='purple image 1'
+                      />
+                      <h5>No Shoulder Ache</h5>
+                      <p>
+                        Lorem ipsum dolor sit amet,
+                        consectetur
+                      </p>
+                    </Column>
+                  }
+                ></TwoFeatureCallout>
               </Column>
             }
           />
