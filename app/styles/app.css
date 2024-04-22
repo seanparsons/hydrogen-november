@@ -6,6 +6,18 @@
   --header-height: 64px;
   --color-dark: #000;
   --color-light: #fff;
+
+/* Trippy Trails */
+
+    --yellow: #FFC947;
+    --purple: #6E7CFF;
+    --orange: #FE5E35;
+    --green: #0D756B;
+
+    --stroke-dark: #2B152A;
+
+    --purple-gradient: linear-gradient(102deg, #6E7CFF 3.16%, #4F5FF9 58.76%);
+
 }
 
 img {
