@@ -272,6 +272,7 @@ export const QuoteWithRating = ({
   quote,
   rating,
   backgroundColor,
+  style,
 }) => (
   <div
     style={{
@@ -280,6 +281,7 @@ export const QuoteWithRating = ({
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
+      ...style,
     }}
   >
     <div
@@ -305,5 +307,49 @@ export const QuoteWithRating = ({
     >
       {quote}
     </div>
+  </div>
+)
+
+export const DuplicatedImageWithBackground = ({
+  image,
+  backgroundColor,
+}) => (
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: 10,
+    }}
+  >
+    <div
+      style={{
+        position: 'relative',
+        top: 70,
+        width: 350,
+        height: 325,
+        backgroundColor: backgroundColor ?? null,
+        borderRadius: 20,
+      }}
+    />
+    <img
+      style={{
+        position: 'absolute',
+        top: 10,
+        left: 242,
+        scale: '0.8',
+      }}
+      srcSet={image + ' 2x'}
+      alt=''
+    />
+    <img
+      style={{
+        position: 'absolute',
+        top: 10,
+        left: 100,
+      }}
+      srcSet={image + ' 2x'}
+      alt=''
+    />
   </div>
 )

@@ -7,6 +7,7 @@ import {
   SpecialRow,
   TwoFeatureCallout,
   QuoteWithRating,
+  DuplicatedImageWithBackground,
 } from '~/components/Components'
 
 export default function LandingPage() {
@@ -55,17 +56,26 @@ export default function LandingPage() {
         <Column>
           <SpecialRow
             style={{
-              background: 'var(--purple',
+              background: 'var(--purple)',
               color: 'white',
             }}
             left={
-              <div>
+              <div
+                style={{
+                  contain: 'layout',
+                }}
+              >
+                <DuplicatedImageWithBackground
+                  backgroundColor={'var(--lihgt-purple)'}
+                  image={'merchandise/bag-black@2x.png'}
+                />
                 <QuoteWithRating
                   quote={
                     'My 3 y/o loves it carrying daily to the school! ❤️'
                   }
                   rating={5}
                   backgroundColor={'var(--dark-blue)'}
+                  style={{ position: 'relative', left: 75 }}
                 />
               </div>
             }
