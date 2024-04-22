@@ -1,17 +1,91 @@
-export const Title = ({ title, level }) => (
+// Typographic Components
+// .page-title       { font-size: 60px; line-height: 120% }
+// .section-title    { font-size: 48px; line-height: 140% }
+// .subsection-title { font-size: 40px; line-height: 120% }
+// .section-subtitle { font-size: 20px; line-height: 140%; font-weight: bold }
+
+// Text styles
+// .large     { font-size: 20px; line-height: 140% }
+// .regular             { font-size: 16px; line-height: 140%; }
+// .smaller     { font-size: 15px; line-height: 140%; }
+
+export const PageTitle = ({ style, children }) => (
   <h1
-    style={{
-      fontSize:
-        level == 'primary'
-          ? 48
-          : level == 'default'
-          ? 24
-          : 18,
-    }}
+    style={{ fontSize: 60, lineHeight: '120%', ...style }}
   >
-    {title}
+    {children}
   </h1>
 )
+export const SectionTitle = ({ style, children }) => (
+  <h2
+    style={{
+      fontSize: '60px',
+      lineHeight: '120%',
+      padding: 0,
+      margin: 0,
+      ...style,
+    }}
+  >
+    {children}
+  </h2>
+)
+export const SubsectionTitle = ({ style, children }) => (
+  <h3
+    style={{
+      fontSize: '40px',
+      lineHeight: '120%',
+      padding: 0,
+      margin: 0,
+      ...style,
+    }}
+  >
+    {children}
+  </h3>
+)
+
+export const SectionSubtitle = ({ style, children }) => (
+  <h5
+    style={{
+      fontSize: '20px',
+      lineHeight: '140%',
+      padding: 0,
+      margin: 0,
+      ...style,
+    }}
+  >
+    {children}
+  </h5>
+)
+
+export const Text = ({
+  level,
+  deemphasized,
+  children,
+  style,
+}) => {
+  const large = { fontSize: '20px' }
+  const regular = { fontSize: '16px' }
+  const smaller = { fontSize: '15px' }
+
+  const resultingStyle =
+    level === 'large'
+      ? large
+      : level === 'regular'
+      ? regular
+      : smaller
+
+  return (
+    <span
+      style={{
+        ...resultingStyle,
+        opacity: deemphasized ? 0.5 : 1,
+        ...style,
+      }}
+    >
+      {children}
+    </span>
+  )
+}
 
 export const Grid = ({ left, right, padded, gap }) => (
   <div
@@ -48,9 +122,6 @@ export const SpecialRow = ({
   </div>
 )
 
-export const Heading = ({ children }) => <h1>{children}</h1>
-export const Footer = ({ children }) => <h1>{children}</h1>
-export const Text = ({ children }) => <h1>{children}</h1>
 export const Button = ({ children }) => <h1>{children}</h1>
 
 export const Card = ({
