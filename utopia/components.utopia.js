@@ -11,6 +11,7 @@ import {
   Section,
   Row,
   Column,
+  Spacer,
 } from '../app/components/Components'
 
 const RowVariants = [
@@ -424,6 +425,18 @@ const Components = {
       },
       focus: 'never',
       variants: ColumnVariants,
+    },
+    Spacer: {
+      component: Spacer,
+      properties: {
+        height: Utopia.stringControl(),
+      },
+      variants: {
+        label: 'Spacer',
+        imports:
+          'import { Spacer } from "/app/components/Components"',
+        code: `<Spacer height={50} />`,
+      },
     },
   },
 }
