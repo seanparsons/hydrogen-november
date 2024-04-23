@@ -16,6 +16,7 @@ import {
   Text,
   Stars,
   PageTitle,
+  SubsectionTitle,
 } from '~/components/Components'
 import { LANDING_PAGE_QUERY } from './trippy-trails-template'
 
@@ -110,8 +111,12 @@ export default function LandingPage() {
       </Section>
       <Section padded>
         <Column centered>
-          <h3>And in comfort binds them</h3>
-          <h2>one bag to fit them all</h2>
+          <SectionSubtitle>
+            And in comfort binds them
+          </SectionSubtitle>
+          <SubsectionTitle>
+            one bag to fit them all
+          </SubsectionTitle>
         </Column>
       </Section>
       <Section style={{ padding: '3em 9em' }}>
