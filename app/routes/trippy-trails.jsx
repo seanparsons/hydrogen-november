@@ -114,8 +114,19 @@ export default function LandingPage() {
           <SectionSubtitle>
             And in comfort binds them
           </SectionSubtitle>
-          <SubsectionTitle>
-            one bag to fit them all
+          <SubsectionTitle style={{ contain: 'layout' }}>
+            <img
+              style={{
+                zIndex: -1,
+                position: 'absolute',
+                top: 0,
+                // right: -80,
+                transform: 'scale(.75)',
+              }}
+              src='decorative/underline_01@2x.png'
+              alt='decorative swirl'
+            />
+            <span>one bag to fit them all</span>
           </SubsectionTitle>
         </Column>
       </Section>
