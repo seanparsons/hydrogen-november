@@ -230,7 +230,7 @@ export default function LandingPage() {
                   left: -55,
                   transform: 'scale(.5)',
                 }}
-                src='/decorative/swirl_black_02@2x.png'
+                src='decorative/swirl_black_02@2x.png'
                 alt='decorative swirl'
               />
               <img
@@ -240,7 +240,7 @@ export default function LandingPage() {
                   right: -80,
                   transform: 'scale(.5)',
                 }}
-                src='/decorative/underline_01@2x.png'
+                src='decorative/underline_01@2x.png'
                 alt='decorative swirl'
               />
               <span
