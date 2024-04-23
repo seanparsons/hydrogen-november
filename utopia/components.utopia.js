@@ -15,16 +15,56 @@ import {
   Text,
   Stars,
   Placeholder,
+  SectionTitle,
+  SectionSubtitle,
 } from '../app/components/Components'
 
 const RowVariants = [
   {
     label: 'Row with Placeholders',
     imports:
-      'import { Row, Placeholder } from "/app/components/Components"',
-    code: `<Row>
-  <Placeholder />
-  <Placeholder />
+      'import { Row } from "/app/components/Components"',
+    code: `    <Row
+  style={{
+    width: 533,
+    height: 150,
+    padding: '10px 10px 10px 10px',
+    borderRadius: 13,
+    overflow: 'hidden',
+    gap: 20,
+    contain: 'layout',
+  }}
+>
+  <div
+    style={{
+      backgroundColor: '#5956d6',
+      contain: 'layout',
+      borderRadius: 25,
+      overflow: 'hidden',
+      height: 130,
+      flexGrow: 1,
+    }}
+  />
+  <div
+    style={{
+      backgroundColor: '#5956d6',
+      contain: 'layout',
+      borderRadius: 25,
+      overflow: 'hidden',
+      height: 130,
+      flexGrow: 1,
+    }}
+  />
+  <div
+    style={{
+      backgroundColor: '#5956d6',
+      contain: 'layout',
+      borderRadius: 25,
+      overflow: 'hidden',
+      height: 130,
+      flexGrow: 1,
+    }}
+  />
 </Row>`,
   },
 ]
@@ -467,6 +507,28 @@ const Components = {
         label: 'Stars',
         imports: `import { Stars } from '/app/components/Components'`,
         code: `<Stars rating={5} />`,
+      },
+    },
+    SectionSubtitle: {
+      component: SectionSubtitle,
+      properties: { style: Utopia.styleControl() },
+      children: { preferredContents: 'text' },
+      variants: {
+        label: 'Section subtitle',
+        imports: `import { SectionSubtitle } from "/app/components/Components"`,
+        code: `<SectionSubtitle>Section subtitle</SectionSubtitle>`,
+      },
+    },
+    SectionTitle: {
+      component: SectionTitle,
+      properties: {
+        style: Utopia.styleControl(),
+      },
+      children: 'supported',
+      variants: {
+        label: 'Section title',
+        imports: `import { SectionTitle } from "/app/components/Components"`,
+        code: `<SectionTitle>Section title</SectionTitle>`,
       },
     },
   },
