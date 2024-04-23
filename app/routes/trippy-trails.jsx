@@ -17,6 +17,7 @@ import {
   Stars,
   PageTitle,
 } from '~/components/Components'
+import { LANDING_PAGE_QUERY } from './trippy-trails-template'
 
 export async function loader({ params, context }) {
   const { reviews } = await context.storefront.query(
@@ -352,30 +353,3 @@ export const WomanSeeking = () => (
     />
   </div>
 )
-
-// NOTE: https://shopify.dev/docs/api/storefront/latest/objects/blog#field-blog-articlebyhandle
-const LANDING_PAGE_QUERY = `#graphql
-  query LandingPage(
-    $country: CountryCode
-    $language: LanguageCode
-  ) @inContext(language: $language, country: $country) {
-    reviews: metaobjects(type: "product_ratings", first: 10) {
-    nodes {
-      id
-      type
-      rating: field(key: "rating") {
-        value
-      }
-      reviewSummary: field(key: "review_summary") {
-        value
-      }
-      reviewerName: field(key: "reviewer_name") {
-        value
-      }
-      countryEmoji: field(key: "country_emoji") {
-        value
-      }
-    }
-  }
-  }
-`
