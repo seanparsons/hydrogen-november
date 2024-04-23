@@ -8,8 +8,9 @@ import { Image } from '@shopify/hydrogen'
 
 const contextGetter = getLoadContext(
   {
-    SESSION_SECRET: 'foobar',
-    PUBLIC_STORE_DOMAIN: 'mock.shop',
+    PUBLIC_STORE_DOMAIN: 'praiseful-pear.myshopify.com',
+    PUBLIC_STOREFRONT_API_TOKEN:
+      '541564e540184b9648c529272ffa4b53',
   },
   {
     waitUntil: () => {},
