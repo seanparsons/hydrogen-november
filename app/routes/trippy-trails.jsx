@@ -71,7 +71,6 @@ export const ReviewCard = ({
 
 export default function LandingPage() {
   const { reviews } = useLoaderData()
-  console.log('reviews', reviews)
   return (
     <Column>
       <div
