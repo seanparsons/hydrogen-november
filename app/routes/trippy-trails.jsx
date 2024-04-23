@@ -1,3 +1,5 @@
+import { useLoaderData } from '@remix-run/react'
+import { json } from '@shopify/remix-oxygen'
 import {
   Column,
   Row,
@@ -14,6 +16,17 @@ import {
   Text,
   Stars,
 } from '~/components/Components'
+
+export async function loader({ params, context }) {
+  const { reviews } = await context.storefront.query(
+    LANDING_PAGE_QUERY,
+    {
+      variables: {},
+    },
+  )
+
+  return json({ reviews })
+}
 
 export const ReviewCard = ({
   children,
@@ -56,6 +69,8 @@ export const ReviewCard = ({
 )
 
 export default function LandingPage() {
+  const { reviews } = useLoaderData()
+  console.log('reviews', reviews)
   return (
     <Column>
       <div
@@ -314,3 +329,30 @@ export const WomanSeeking = () => (
     />
   </div>
 )
+
+// NOTE: https://shopify.dev/docs/api/storefront/latest/objects/blog#field-blog-articlebyhandle
+const LANDING_PAGE_QUERY = `#graphql
+  query LandingPage(
+    $country: CountryCode
+    $language: LanguageCode
+  ) @inContext(language: $language, country: $country) {
+    reviews: metaobjects(type: "product_ratings", first: 10) {
+    nodes {
+      id
+      type
+      rating: field(key: "rating") {
+        value
+      }
+      reviewSummary: field(key: "review_summary") {
+        value
+      }
+      reviewerName: field(key: "reviewer_name") {
+        value
+      }
+      countryEmoji: field(key: "country_emoji") {
+        value
+      }
+    }
+  }
+  }
+`
