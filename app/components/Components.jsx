@@ -325,6 +325,7 @@ export const TrippyButton = ({
       fontSize: 18,
       fontWeight: 'bold',
       ...style,
+      cursor: 'pointer',
     }}
   >
     <span style={{ flexGrow: 1, textAlign: 'left' }}>

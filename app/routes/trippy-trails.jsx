@@ -196,16 +196,44 @@ export default function LandingPage() {
           <Column
             centered
             style={{
-              paddingLeft: '18em',
-              paddingRight: '18em',
+              paddingLeft: '21em',
+              paddingRight: '21em',
               marginBottom: 50,
             }}
           >
             <SectionSubtitle>
               They love us ❤️
             </SectionSubtitle>
-            <SectionTitle style={{ marginTop: 8 }}>
-              some of our happy faces
+            <SectionTitle
+              style={{ marginTop: 8, position: 'relative' }}
+            >
+              <img
+                style={{
+                  position: 'absolute',
+                  top: -55,
+                  left: -55,
+                  transform: 'scale(.5)',
+                }}
+                src='/decorative/swirl_black_02@2x.png'
+                alt='decorative swirl'
+              />
+              <img
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  right: -80,
+                  transform: 'scale(.5)',
+                }}
+                src='/decorative/underline_01@2x.png'
+                alt='decorative swirl'
+              />
+              <span
+                style={{
+                  position: 'relative',
+                }}
+              >
+                some of our happy faces
+              </span>
             </SectionTitle>
             <Text
               level='large'
@@ -227,7 +255,7 @@ export default function LandingPage() {
               title='Very Noice'
               text='Nel mezzo del cammin di nostra vita mi ritrovai per una selva oscura'
               country='🇦🇺'
-              name='Joe Pesci'
+              name='D. Alighieri'
             />
             <ReviewCard
               rating={4}
@@ -239,13 +267,23 @@ export default function LandingPage() {
             <ReviewCard
               rating={4}
               title='Something to know about backpacks'
-              text='Wearing a turtleneck is like being strangled by a really weak guy, all day. Wearing a backpack and a turtleneck is like a weak midget trying to bring you down'
+              text='Wearing a backpack and a turtleneck is like a weak midget trying to bring you down'
               country='🇺🇸'
               name='Johnny Hands'
             />
           </Row>
 
-          <Row gap={27}>
+          <Row
+            style={{
+              overflow: 'scroll',
+              maxWidth: '100%',
+              scrollSnapType: 'x proximity',
+              scrollPadding: '20px',
+              border: '1px solid red',
+            }}
+            gap={27}
+          >
+            <ReviewCard></ReviewCard>
             <ReviewCard></ReviewCard>
             <ReviewCard></ReviewCard>
             <ReviewCard></ReviewCard>
