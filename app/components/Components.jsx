@@ -465,11 +465,7 @@ export const DuplicatedImageWithBackground = ({
       alt=''
     />
     <img
-      style={{
-        position: 'absolute',
-        top: 10,
-        left: 100,
-      }}
+      style={{ position: 'absolute', top: 10, left: 100 }}
       srcSet={image + ' 2x'}
       alt=''
     />
@@ -498,7 +494,10 @@ export const ProductCard = ({
       to={`/products/${handle}`}
       style={{ textDecoration: 'none' }}
     >
-      <Column centered style={{ contain: 'layout' }}>
+      <Column
+        centered
+        style={{ contain: 'layout', width: 288 }}
+      >
         <div
           style={{
             position: 'absolute',
@@ -514,10 +513,25 @@ export const ProductCard = ({
               ] ?? null,
           }}
         />
-        <Image data={image} width={250} />
+        <Image
+          data={image}
+          width={250}
+          style={{ marginBottom: 10 }}
+        />
+        <div
+          style={{
+            backgroundImage:
+              'radial-gradient(#00000040 0%, #E1E1E100 67%)',
+            height: 20,
+            width: '100%',
+            border: '0px rgb(229, 231, 235, 1)',
+            marginBottom: 10,
+          }}
+          data-label='shadow'
+        />
       </Column>
       <Column
-        gap={'1.5em'}
+        gap='1.5em'
         padded
         centered
         style={{
@@ -536,10 +550,7 @@ export const ProductCard = ({
               marginTop: '0.5em',
             }}
           />
-          <Column
-            gap={'0.5em'}
-            style={{ marginTop: '1em' }}
-          >
+          <Column gap='0.5em' style={{ marginTop: '1em' }}>
             <Text>Colors available</Text>
             <ColorOptions />
           </Column>
