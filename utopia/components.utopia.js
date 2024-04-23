@@ -11,6 +11,8 @@ import {
   Section,
   Row,
   Column,
+  Spacer,
+  Text,
 } from '../app/components/Components'
 
 const RowVariants = [
@@ -237,6 +239,17 @@ const ColumnVariants = [
   },
 ]
 
+// HalfAndHalf,
+// TrippyButton,
+// SpecialRow,
+// TwoFeatureCallout,
+// QuoteWithRating,
+// DuplicatedImageWithBackground,
+// SectionSubtitle,
+// SectionTitle,
+// Text,
+// Stars,
+
 const Components = {
   '/app/routes/_index': {
     RecommendedProducts: {
@@ -424,6 +437,53 @@ const Components = {
       },
       focus: 'never',
       variants: ColumnVariants,
+    },
+    Spacer: {
+      component: Spacer,
+      properties: {
+        height: Utopia.stringControl(),
+      },
+      variants: {
+        label: 'Spacer',
+        imports:
+          'import { Spacer } from "/app/components/Components"',
+        code: `<Spacer height={50} />`,
+      },
+    },
+    Text: {
+      component: Text,
+      properties: {
+        level: Utopia.popupListControl([
+          {
+            label: 'large',
+            value: 'large',
+          },
+          {
+            label: 'embiggened',
+            value: 'embiggened',
+          },
+          {
+            label: 'regular',
+            value: 'regular',
+          },
+          {
+            label: 'smaller',
+            value: 'smaller',
+          },
+        ]),
+        deemphasized: Utopia.checkboxControl(),
+        emboldened: Utopia.checkboxControl(),
+        style: Utopia.styleControl(),
+      },
+      children: { preferredContents: 'text' },
+      variants: [
+        {
+          label: 'Text, embiggened',
+          imports:
+            'import { Text } from "/app/components/Components"',
+          code: `<Text level='embiggened'><span>Embiggened text</span></Text>`,
+        },
+      ],
     },
   },
 }
