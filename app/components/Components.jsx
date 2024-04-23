@@ -515,7 +515,7 @@ export const ProductCard = ({
               ] ?? null,
           }}
         />
-        <Image data={image} aspectRatio='1/1' width={250} />
+        <Image data={image} width={250} />
       </Column>
       <Column
         gap={'1.5em'}
