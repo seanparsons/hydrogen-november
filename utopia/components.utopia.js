@@ -11,6 +11,7 @@ import {
   Section,
   Row,
   Column,
+  HalfAndHalf,
   Spacer,
   Text,
   Stars,
@@ -236,6 +237,33 @@ const Components = {
     },
   },
   '/app/components/Components': {
+    HalfAndHalf: {
+      component: HalfAndHalf,
+      properties: {
+        left: {
+          control: 'jsx',
+          preferredContents: [
+            {
+              component: 'Placeholder',
+              moduleName: '/app/components/Components',
+              variants: [],
+            },
+          ],
+        },
+        right: {
+          control: 'jsx',
+          preferredContents: [
+            {
+              component: 'Placeholder',
+              moduleName: '/app/components/Components',
+              variants: [],
+            },
+          ],
+        },
+        padded: Utopia.checkboxControl(),
+        gap: Utopia.numberControl(),
+      },
+    },
     Placeholder: {
       component: Placeholder,
       properties: {
