@@ -14,6 +14,7 @@ import {
   Spacer,
   Text,
   Stars,
+  Placeholder,
 } from '../app/components/Components'
 
 const RowVariants = [
@@ -308,6 +309,14 @@ const Components = {
     },
   },
   '/app/components/Components': {
+    Placeholder: {
+      component: Placeholder,
+      properties: {
+        margin: Utopia.numberControl(),
+        fill: Utopia.colorControl(),
+        fixed: Utopia.checkboxControl(),
+      },
+    },
     Grid: {
       component: Grid,
       properties: {
