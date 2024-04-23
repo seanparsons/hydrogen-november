@@ -136,6 +136,7 @@ export default function LandingPage() {
             style={{
               background: 'var(--purple)',
               color: 'white',
+              paddingBottom: '2em',
             }}
             left={
               <div
@@ -161,7 +162,7 @@ export default function LandingPage() {
               </div>
             }
             right={
-              <Column style={{ padding: '2em 0em' }}>
+              <Column style={{ padding: '2em 2em' }}>
                 <h2
                   style={{
                     color: 'var(--color-light)',
@@ -210,6 +211,183 @@ export default function LandingPage() {
                         alt='purple  1'
                       />
                       <h4>Stationery Pockets</h4>
+                      <p>
+                        Lorem ipsum dolor sit amet,
+                        consectetur
+                      </p>
+                    </Column>
+                  }
+                ></TwoFeatureCallout>
+              </Column>
+            }
+          />
+          <SpecialRow
+            inverted
+            style={{
+              background: 'var(--orange)',
+              color: 'white',
+              paddingBottom: '2em',
+            }}
+            left={
+              <div
+                style={{
+                  contain: 'layout',
+                }}
+              >
+                <DuplicatedImageWithBackground
+                  backgroundColor={'var(--dark-orange)'}
+                  image={'merchandise/bag-black@2x.png'}
+                />
+                <QuoteWithRating
+                  quote={
+                    'Those custom pockets are a life saver! 😍'
+                  }
+                  rating={5}
+                  backgroundColor={'var(--darker-orange)'}
+                  style={{
+                    position: 'relative',
+                    left: 100,
+                  }}
+                />
+              </div>
+            }
+            right={
+              <Column style={{ padding: '2em 2em' }}>
+                <h2
+                  style={{
+                    color: 'var(--color-light)',
+                    fontSize: 40,
+                    paddingTop: '1em',
+                    lineHeight: '1.2em',
+                  }}
+                >
+                  Perfect for your lappy
+                </h2>
+                {/* TODO replace with remix link */}
+                <a
+                  style={{
+                    marginTop: '1em',
+                    color: 'white',
+                  }}
+                  href='/'
+                >
+                  View Laptop Collection
+                </a>
+                <TwoFeatureCallout
+                  style={{
+                    marginTop: '1.4em',
+                  }}
+                  left={
+                    <Column padded>
+                      <img
+                        srcSet='illustration/feature-image-orange-02@2x.png 2x'
+                        alt='purple 1'
+                        width={55}
+                        height={55}
+                      />
+                      <h4>Laptop Customized</h4>
+                      <p>
+                        Lorem ipsum dolor sit amet,
+                        consectetur
+                      </p>
+                    </Column>
+                  }
+                  right={
+                    <Column padded>
+                      <img
+                        srcSet='illustration/feature-image-orange-01@2x.png 2x'
+                        width={55}
+                        height={55}
+                        alt='purple  1'
+                      />
+                      <h4>Accessories Space</h4>
+                      <p>
+                        Lorem ipsum dolor sit amet,
+                        consectetur
+                      </p>
+                    </Column>
+                  }
+                ></TwoFeatureCallout>
+              </Column>
+            }
+          />
+          <SpecialRow
+            style={{
+              background: 'var(--green)',
+              color: 'white',
+              paddingBottom: '2em',
+            }}
+            left={
+              <div
+                style={{
+                  contain: 'layout',
+                }}
+              >
+                <DuplicatedImageWithBackground
+                  backgroundColor={'var(--light-green)'}
+                  image={'merchandise/bag-black@2x.png'}
+                />
+                <QuoteWithRating
+                  quote={'The best hiking backpack! 💪'}
+                  rating={5}
+                  backgroundColor={'var(--dark-green)'}
+                  style={{
+                    position: 'relative',
+                    left: 100,
+                  }}
+                />
+              </div>
+            }
+            right={
+              <Column style={{ padding: '2em 2em' }}>
+                <h2
+                  style={{
+                    color: 'var(--color-light)',
+                    fontSize: 40,
+                    paddingTop: '1em',
+                    lineHeight: '1.2em',
+                  }}
+                >
+                  Travel Companion
+                </h2>
+                {/* TODO replace with remix link */}
+                <a
+                  style={{
+                    marginTop: '1em',
+                    color: 'white',
+                  }}
+                  href='/'
+                >
+                  View Travel Collection
+                </a>
+                <TwoFeatureCallout
+                  style={{
+                    marginTop: '1.4em',
+                  }}
+                  left={
+                    <Column padded>
+                      <img
+                        srcSet='illustration/feature-image-green-01@2x.png 2x'
+                        alt='purple 1'
+                        width={55}
+                        height={55}
+                      />
+                      <h4>No Shoulder Ache</h4>
+                      <p>
+                        Lorem ipsum dolor sit amet,
+                        consectetur
+                      </p>
+                    </Column>
+                  }
+                  right={
+                    <Column padded>
+                      <img
+                        srcSet='illustration/feature-image-green-02@2x.png 2x'
+                        width={55}
+                        height={55}
+                        alt='purple  1'
+                      />
+                      <h4>Hold Hiking Gear</h4>
                       <p>
                         Lorem ipsum dolor sit amet,
                         consectetur
