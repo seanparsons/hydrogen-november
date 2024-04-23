@@ -190,6 +190,7 @@ export const Section = ({
 export const Row = ({
   padded,
   centered,
+  scrollable,
   wrap,
   gap,
   style,
@@ -203,6 +204,10 @@ export const Row = ({
       justifyContent: centered ? 'center' : null,
       gap: gap ?? null,
       flexWrap: wrap ? 'wrap' : 'no-wrap',
+      maxWidth: scrollable ? '100%' : null,
+      overflow: scrollable ? 'scroll' : null,
+      scrollSnapType: 'x mandatory',
+      scrollPadding: '20px',
       ...style,
     }}
   >

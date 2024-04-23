@@ -33,6 +33,7 @@ export const ReviewCard = ({
       border: '1px solid #c5c5c5',
       overflow: 'hidden',
       padding: '27px 24px',
+      ...style,
     }}
   >
     <Stars rating={rating} />
@@ -243,51 +244,73 @@ export default function LandingPage() {
                 textAlign: 'center',
               }}
             >
-              We offer some special services through which
-              you can easily complete the marketing work on
-              social media. Which helps increase your lead
-              and sales.
+              Our backpacks are worn and loved by millions.
+              But don't take it from us - here is what some
+              of our faceless customers are saying about our
+              products and service.
             </Text>
           </Column>
-          <Row gap={27} style={{ marginBottom: 36 }}>
-            <ReviewCard
-              rating={5}
-              title='Very Noice'
-              text='Nel mezzo del cammin di nostra vita mi ritrovai per una selva oscura'
-              country='🇦🇺'
-              name='D. Alighieri'
-            />
+          <Row
+            gap={27}
+            scrollable
+            style={{ marginBottom: 36 }}
+          >
             <ReviewCard
               rating={4}
-              title='Now you listen to me'
-              text='A friend should always underestimate your virtues and an enemy overestimate your faults'
+              title='A good backpack is like a true friend'
+              text='A friend should always underestimate your virtues and an enemy overestimate your faults.'
               country='🇮🇹'
-              name='Mario Puzo'
+              name='M Puzo'
             />
             <ReviewCard
               rating={4}
               title='Something to know about backpacks'
               text='Wearing a backpack and a turtleneck is like a weak midget trying to bring you down'
               country='🇺🇸'
-              name='Johnny Hands'
+              name='Mitch Hedberg'
+            />
+            <ReviewCard
+              rating={4}
+              title='Everything good in life happens on the run.'
+              text='This bag holds cash, ammo, and three quarts of whiskey.'
+              country='🇺🇸'
+              name='Clyde Barrow'
+            />
+            <ReviewCard
+              rating={4}
+              title='Works well with body armor'
+              text='What I best recall is riding alone with the sun behind me, seeing me own shadow cantering ahead against the roadside weeds.'
+              country='🇦🇺'
+              name='Ned Kelly'
+            />
+            <ReviewCard
+              rating={5}
+              title='Will carry you to hell and back'
+              text='Midway through the journey of my life, I found myself inside a shadowy forest. But at least I had a backpack!'
+              country='🇮🇹'
+              name='D. Alighieri'
             />
           </Row>
 
-          <Row
-            style={{
-              overflow: 'scroll',
-              maxWidth: '100%',
-              scrollSnapType: 'x proximity',
-              scrollPadding: '20px',
-              border: '1px solid red',
-            }}
-            gap={27}
-          >
-            <ReviewCard></ReviewCard>
-            <ReviewCard></ReviewCard>
-            <ReviewCard></ReviewCard>
-            <ReviewCard></ReviewCard>
-            <ReviewCard></ReviewCard>
+          <Row scrollable gap={27}>
+            <ReviewCard
+              style={{ scrollSnapAlign: 'start' }}
+            ></ReviewCard>
+            <ReviewCard
+              style={{ scrollSnapAlign: 'start' }}
+            ></ReviewCard>
+            <ReviewCard
+              style={{ scrollSnapAlign: 'start' }}
+            ></ReviewCard>
+            <ReviewCard
+              style={{ scrollSnapAlign: 'start' }}
+            ></ReviewCard>
+            <ReviewCard
+              style={{ scrollSnapAlign: 'start' }}
+            ></ReviewCard>
+            <ReviewCard
+              style={{ scrollSnapAlign: 'start' }}
+            ></ReviewCard>
           </Row>
         </Column>
       </Section>
