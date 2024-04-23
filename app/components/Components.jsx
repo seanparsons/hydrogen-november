@@ -13,6 +13,27 @@ import { StarIcon } from '@heroicons/react/24/solid'
 import { Link } from '@remix-run/react'
 import { Image, Money } from '@shopify/hydrogen'
 
+export const Placeholder = ({
+  style,
+  margin,
+  fill,
+  fixed = true,
+}) => (
+  <div
+    style={{
+      backgroundColor: 'rgb(225 225 225 / 25%)',
+      border: '1px dashed rgb(61 154 255)',
+      borderRadius: 10,
+      minWidth: fixed ? 100 : null,
+      minHeight: fixed ? 100 : null,
+      flexGrow: fill ? 1 : null,
+      alignSelf: fill ? 'stretch' : null,
+      margin: margin ? '10px' : null,
+      ...style,
+    }}
+  />
+)
+
 export const PageTitle = ({ style, children }) => (
   <h1
     style={{ fontSize: 60, lineHeight: '120%', ...style }}
@@ -180,6 +201,8 @@ export const Section = ({
     style={{
       padding: padded ? '1em 10em' : null,
       minHeight: minHeight ? '85vh' : null,
+      display: 'flex',
+      flexDirection: 'column',
       ...style,
     }}
   >
