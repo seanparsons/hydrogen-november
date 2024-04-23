@@ -13,6 +13,7 @@ import {
   Column,
   Spacer,
   Text,
+  Stars,
 } from '../app/components/Components'
 
 const RowVariants = [
@@ -247,8 +248,6 @@ const ColumnVariants = [
 // DuplicatedImageWithBackground,
 // SectionSubtitle,
 // SectionTitle,
-// Text,
-// Stars,
 
 const Components = {
   '/app/routes/_index': {
@@ -484,6 +483,18 @@ const Components = {
           code: `<Text level='embiggened'><span>Embiggened text</span></Text>`,
         },
       ],
+    },
+    Stars: {
+      component: Stars,
+      properties: {
+        rating: Utopia.numberControl(),
+        style: Utopia.styleControl(),
+      },
+      variants: {
+        label: 'Stars',
+        imports: `import { Stars } from '/app/components/Components'`,
+        code: `<Stars rating={5} />`,
+      },
     },
   },
 }
