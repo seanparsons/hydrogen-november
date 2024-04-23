@@ -15,6 +15,7 @@ import {
   SectionTitle,
   Text,
   Stars,
+  PageTitle,
 } from '~/components/Components'
 
 export async function loader({ params, context }) {
@@ -90,9 +91,9 @@ export default function LandingPage() {
         <HalfAndHalf
           left={
             <Column gap={'1em'}>
-              <h1>
+              <PageTitle>
                 We produce high quality bags for lifestyle
-              </h1>
+              </PageTitle>
               <TrippyButton price={59}>
                 Add to Cart
               </TrippyButton>
