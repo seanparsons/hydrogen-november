@@ -316,6 +316,8 @@ const Components = {
         fill: Utopia.colorControl(),
         fixed: Utopia.checkboxControl(),
       },
+      focus: 'never',
+      inspector: [],
     },
     Grid: {
       component: Grid,
